@@ -138,12 +138,12 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
         
       </div>
       <div className="nav ">
-        <ul className=" space-x-1 md:space-x-10  font-bold flex cursor-pointer   items-center md:text-md ">
+        <ul className=" space-x-[5px] md:space-x-10  font-bold flex cursor-pointer   items-center md:text-md ">
           
             <Link href={'/Tshirts'}><li className="flex hover:text-gray-600  " 
             // onClick={onMouseli1O}
             >
-            Men 
+            Earrings 
             <FaArrowDown className="my-2  mx-2 font-bold text-[15px] hover:text-white " />
               {/* <span className="cart absolute left-[90px] md:left-[35px] top-2 items-center rounded-md mx-5 flex my-8 md:my-1  ">
               { drop1st.value == true &&   <ul   onMouseLeave={onMouseli1L} onClick={onMouseli1L} className="absolute   bg-pink-300   top-14 rounded-md px-12 md:px-5 w-40 md:w-28 " >
@@ -174,7 +174,9 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
           
             <li className="flex cursor-pointer  hover:text-gray-600" 
             // onClick={onMouseli2O}
-            >Women<FaArrowDown className="my-2 mx-2 font-bold text-[15px] hover:text-white " />
+            >
+            Braclets
+            <FaArrowDown className="my-2 mx-2 font-bold text-[15px] hover:text-white " />
             {/* <span className="cart absolute left-[90px] md:left-[155px] top-2 items-center rounded-md mx-5 flex my-8 md:my-1  ">
               { drop2nd.value == true &&   <ul   onMouseLeave={onMouseli2L} onClick={onMouseli2L} className="absolute   bg-pink-300   top-10 rounded-md px-12 md:px-5 w-40 md:w-28 " >
              <Link href={'#'}>  <li className="py-2 hover:text-white hover:p-2  text-black cursor-pointer font-bold text-sm">Kurtis</li></Link> 
@@ -204,7 +206,9 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
           
             <li className="flex cursor-pointer  hover:text-gray-600" 
             // onClick={onMouseli3O}
-            >Kids<FaArrowDown className="my-2 mx-2 font-bold text-[15px] hover:text-white " />
+            >
+              Rings
+              <FaArrowDown className="my-2 mx-2 font-bold text-[15px] hover:text-white " />
             {/* <span onMouseLeave={onMouseli3L} onClick={onMouseli3L}  className="cart absolute left-[90px] md:left-[280px] top-2 items-center rounded-md mx-5 flex my-8 md:my-1   ">
               { drop3rd.value == true &&   <ul   className="absolute   bg-pink-300   top-10 rounded-md px-12 md:px-5 w-40 md:w-28 " >
              <Link href={'#'}>  <li className="py-2 hover:text-white hover:p-2  text-black cursor-pointer font-bold text-sm">Bags</li></Link> 
@@ -220,7 +224,9 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
           
             <li className="flex hover:text-gray-600" 
             // onClick={onMouseli4O}
-            >Electronics<FaArrowDown className="my-2 mx-2 font-bold text-[15px] hover:text-white " />
+            >
+              Chains
+            <FaArrowDown className="my-2 mx-2 font-bold text-[15px] hover:text-white " />
             {/* <span className="cart absolute left-[90px] md:left-[430px] top-2 items-center rounded-md mx-5 flex my-8 md:my-1 ">
               { drop4th.value == true &&   <ul   onMouseLeave={onMouseli4L} onClick={onMouseli4L} className="absolute   bg-pink-300   top-10 rounded-md px-12 md:px-5 w-40 md:w-28 " >
              <Link href={'#'}>  <li className="py-2 hover:text-white hover:p-2  text-black cursor-pointer font-bold text-sm">BJHBJH</li></Link> 

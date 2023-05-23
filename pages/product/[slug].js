@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Error from 'next/error'
 import Link from 'next/link'
 import Image from 'next/image'
-
+import Wear from '../../components/Wear'
 
 
 
@@ -168,7 +168,7 @@ const select =(COLOR,SIZE)=>{
   </div>
 </section>
         {product.AvailableQty<=0 && <div>The product is currently out of stock :(</div>}
-
+    <Wear/>
     </>
   )
 }

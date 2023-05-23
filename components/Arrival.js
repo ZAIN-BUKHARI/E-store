@@ -94,7 +94,7 @@ const NewProducts = ({AddToCart}) => {
         </DIVTWO>
     </Box>
     <ProductInfoBox>
-      <TitleTWO  className='font-bold' href={'/'}>{products.title.slice(0,16)}</TitleTWO>
+      <TitleTWO  className='font-bold' href={'/'}>{products.title.slice(0,25)}</TitleTWO>
       <PriceRow>
         <Price>${products.price}</Price>
         <Button  block primary outline onClick={()=>{AddToCart(

@@ -85,10 +85,8 @@ const login = () => {
   return (
     <>
      <style jsx global>{`
-navbar{
-display:none;
-}
-footer{
+
+Footer{
 display:none;
  }
 `}</style>
