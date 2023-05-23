@@ -13,8 +13,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import Image from "next/image";
 import { FaArrowDown } from 'react-icons/fa';
 import { AiOutlineLogin } from 'react-icons/ai';
-
-
+import styled from 'styled-components'
+const Media = styled.div`
+font-size:20px;
+@media (max-width: 768px) {
+  font-size:15px;
+}
+`;
 const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTotal }) => {
   const [drop, setDrop] = useState({value:false})
   // const [drop1st, setDrop1st] = useState({value:false})
@@ -138,7 +143,8 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
         
       </div>
       <div className="nav ">
-        <ul className=" space-x-[5px] md:space-x-10  font-bold flex cursor-pointer   items-center md:text-md ">
+        {/* <ul className="   font-bold flex cursor-pointer   items-center md:text-md "> */}
+        <Media className=" space-x-3 md:space-x-10   font-bold flex cursor-pointer   items-center  ">
           
             <Link href={'/Tshirts'}><li className="flex hover:text-gray-600  " 
             // onClick={onMouseli1O}
@@ -239,7 +245,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
               </span> */}
             </li>
         
-        </ul>
+        </Media>
       </div>
 
       <div className="cart absolute right-0 top-2 items-center mx-5 flex my-1 ">
