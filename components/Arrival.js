@@ -97,7 +97,7 @@ const NewProducts = () => {
       <TitleTWO  className='font-bold'
        passHref={true} 
        href={`/product/${products.slug}`}
-       >{products.title.slice(0,25)}</TitleTWO>
+       >{products.title.slice(0,18)}</TitleTWO>
       <PriceRow>
         <Price>Rs{products.price}</Price>
         <Button  block primary outline >Buy</Button>
