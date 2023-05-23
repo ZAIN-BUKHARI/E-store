@@ -72,7 +72,7 @@ const DIVONE=styled.div`
 const DIVTWO=styled.div`
 `
 
-const NewProducts = ({AddToCart}) => {
+const NewProducts = () => {
   const [feature,setfeature]=useState()
   useEffect(()=>{
      axios.get('/api/feature').then(res=>{
@@ -86,7 +86,7 @@ const NewProducts = ({AddToCart}) => {
     <StyleDiv className='font-bold'>
         {feature && feature.map(products=>(
             // <ProductBox {...products} />
-            <Link key={products.id} href={`/product/${products.id}`}>
+            <Link key={products.id} href={`/product/${products.slug}`}>
  <DIVONE>
     <Box>
         <DIVTWO>
@@ -94,18 +94,13 @@ const NewProducts = ({AddToCart}) => {
         </DIVTWO>
     </Box>
     <ProductInfoBox>
-      <TitleTWO  className='font-bold' href={'/'}>{products.title.slice(0,25)}</TitleTWO>
+      <TitleTWO  className='font-bold'
+       passHref={true} 
+       href={`/product/${products.slug}`}
+       >{products.title.slice(0,25)}</TitleTWO>
       <PriceRow>
-        <Price>${products.price}</Price>
-        <Button  block primary outline onClick={()=>{AddToCart(
-          products.name,
-          products.variant,
-          products.size,
-          products.price,
-          1,
-
-
-        )}} >Add to cart</Button>
+        <Price>Rs{products.price}</Price>
+        <Button  block primary outline >Buy</Button>
         </PriceRow>    
     </ProductInfoBox>
     </DIVONE>
@@ -120,11 +115,3 @@ export default NewProducts
 
 
 
-const products=[
-    {id:"1",title:"Iphone 14 pro",desc:"The MacBook Pro 14-inch (2023) is another fantastic Apple laptop, designed with those who need serious power on the go in mind. The upgrades over the previous version are minimal, but that doesn't stop this from being one of the best laptops you can buy.",price:199,color:"black",image:"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487386_sd.jpg"},
-    {id:"2",title:"Samsun galaxy S9",desc:"The MacBook Pro 14-inch (2023) is another fantastic Apple laptop, designed with those who need serious power on the go in mind. The upgrades over the previous version are minimal, but that doesn't stop this from being one of the best laptops you can buy.",price:299,color:"black",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYuGlnk_ueOi9Xl2vSmTlfLIZ97RrfDoASSQ&usqp=CAU"},
-    {id:"3",title:"Oppo F28",desc:"The MacBook Pro 14-inch (2023) is another fantastic Apple laptop, designed with those who need serious power on the go in mind. The upgrades over the previous version are minimal, but that doesn't stop this from being one of the best laptops you can buy.",price:399,color:"black",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7CT_-Z8jVyWmzlneIb1Zi_f-h5uNxMGLq5Q&usqp=CAU"},
-    {id:"4",title:"Nikia 3310",desc:"The MacBook Pro 14-inch (2023) is another fantastic Apple laptop, designed with those who need serious power on the go in mind. The upgrades over the previous version are minimal, but that doesn't stop this from being one of the best laptops you can buy.",price:499,color:"black",image:"https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png"},
-    {id:"5",title:"Iphone se ",desc:"The MacBook Pro 14-inch (2023) is another fantastic Apple laptop, designed with those who need serious power on the go in mind. The upgrades over the previous version are minimal, but that doesn't stop this from being one of the best laptops you can buy.",price:599,color:"black",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyYrC2fBAudUmtnda_YbskB1xAkjcTb-7_0A&usqp=CAU"},
-    {id:"6",title:"Ipad mini 5 pro",desc:"The MacBook Pro 14-inch (2023) is another fantastic Apple laptop, designed with those who need serious power on the go in mind. The upgrades over the previous version are minimal, but that doesn't stop this from being one of the best laptops you can buy.",price:999,color:"black",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Qqo-UdIX054vewX_mGqeZBSTnbWwooaifg&usqp=CAU"},
-]

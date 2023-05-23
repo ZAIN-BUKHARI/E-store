@@ -99,7 +99,7 @@ const Adminsales = (admin) => {
   //price of marked orders
   let profit=0;
   for (const productId of totprofit) {
-    if(productId.Profit){
+    if(productId.Profit && productId.payment=='done'){
       profit+=productId.Profit
     }
   }

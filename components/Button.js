@@ -59,6 +59,9 @@ export const ButtonStyle = css`
 const StyledButton = styled.button`
   ${ButtonStyle}
 `;
+const hello=()=>{
+  AddToCart(products.slug ,1,products.price,products.title,products.Size,products.Color)
+}
 
 export default function Button({children,...rest}) {
   return (
