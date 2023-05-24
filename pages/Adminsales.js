@@ -165,7 +165,7 @@ const Adminsales = (admin) => {
                   Profit </ProductInfoCell>
                 <ProductInfoCell> 
                     {/* <Button  >-</Button> */}
-                    <QuantityLabel>{product.length}
+                    <QuantityLabel>{lengthofallproduct}
                     </QuantityLabel>
                     {/* <Button >+</Button> */}
                 </ProductInfoCell>

@@ -68,6 +68,7 @@ const Tshirts = ({products}) => {
     
   </section>
   </div>
+  
 
   
   {/* PAGINATION   */}

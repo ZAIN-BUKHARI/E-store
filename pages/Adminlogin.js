@@ -34,7 +34,8 @@ const login = () => {
 
     
     const data = {email,password}
-    let response =  await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/adminLogin`,{
+    // let response =  await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/adminLogin`,{
+    let response =  await fetch(`/api/adminLogin`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'

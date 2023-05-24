@@ -6,8 +6,10 @@ import { TbCurrencyReal } from 'react-icons/tb'
 import styled from 'styled-components'
 import NewProducts from '../components/Arrival'
 import Wear from '../components/Wear'
+import Image from 'next/image'
 export default function Home() {
   return (
+    <>
     <div className=''>
       <Head>
         <title>Zainy'sWear</title>
@@ -22,65 +24,6 @@ export default function Home() {
   <div className="container px-5 py-24 mx-auto">
     <Wear/>
 
-
-
-
-
-
-
-
-    <div className="flex flex-wrap">
-    <section className="text-gray-600 body-font">
-  <div className="container px-5 py- mx-auto">
-    
-    <div className="flex flex-wrap mx-12">
-      <div className="p-4 md:w-1/3 ">
-        <div className="flex rounded-lg md:h-[150px] h-[200px] text-center   bg-pink-100 p-8 flex-col">
-          <div className="flex items-center mb-3">
-            <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                <FaTshirt className='' />
-            </div>
-            <h2 className="text-gray-900 text-lg title-font font-medium">Premium Tshirts</h2>
-          </div>
-          <div className="flex-grow">
-            <p className="leading-relaxed text-base">Our products quality are very good.</p>
-          </div>
-        </div>
-      </div>
-      <div className="p-4 md:w-1/3">
-        <div className="flex rounded-lg md:h-[150px] h-[200px] text-center  bg-pink-100 p-8 flex-col">
-          <div className="flex items-center mb-3">
-            <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-              <FaShuttleVan/>
-            </div>
-            <h2 className="text-gray-900 text-lg title-font font-medium">Free Delivery</h2>
-          </div>
-          <div className="flex-grow">
-            <p className="leading-relaxed text-base">We ship all over pakistan free.</p>
-          </div>
-        </div>
-      </div>
-      <div className="p-4 md:w-1/3">
-        <div className="flex rounded-lg md:h-[150px] h-[200px] text-center bg-pink-100 p-8 flex-col">
-          <div className="flex items-center mb-3">
-            <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-              <TbCurrencyReal/>
-            </div>
-            <h2 className="text-gray-900 text-lg title-font font-medium">Exciting Offers</h2>
-          </div>
-          <div className="flex-grow">
-            <p className="leading-relaxed text-base">We provide amazing discounts.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-      
-     
-     
-    </div>
-    
   </div>
 </section>
       
@@ -88,5 +31,10 @@ export default function Home() {
      
      
     </div>
+    <div className='flex h-[300px]  justify-center' >
+
+    <img className='w-[70%] h-[300px]'  src='x3.jpg' />
+</div>
+</>
   )
 }

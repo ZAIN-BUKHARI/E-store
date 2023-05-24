@@ -138,8 +138,8 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
     
     <div  className='container px-2 sm:m-auto'>
        <h1 className='font-bold text-3xl my-8 text-center text-pink-500 '>Checkout</h1>
-       <h2 className='text-xl font-semibold'>1.Delivery details</h2>
-      <form ref={form}>
+       <h2 className='text-xl font-semibold'>1.Address details</h2>
+      {/* <form ref={form}>
     <div className='mx-auto flex my-2'>
       <div className='px-2 w-1/2'>
         <div className=" mb-4">
@@ -171,11 +171,17 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
         <div className=" mb-4">
           <label htmlFor="address" className="leading-7 text-sm text-gray-600">Address</label>
           <textarea type="text" value={address}  onChange={Change} cols='10' rows='5' id="address" name="address" className='w-full bg-white rounded border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out' ></textarea>
-          <h1>Go to account section to fill address form</h1>
+       
+        
         </div>
       </div>
-      </form>
-      
+      </form> */}
+      <p className='pl-10 pt-5'>Go to account section to fill address form</p>
+      <div className='flex justify-center' >
+        <Link href={'/myaccount'} className='text-center' ><button className='flex mx-2 w-20 mb-4 text-white bg-pink-500 border-0 py-2  px-3 focus:outline-none hover:bg-pink-600 rounded text-sm'>Address</button></Link>
+
+      </div>
+
 
       <h2 className='text-xl font-semibold'>2. Review cart items</h2>
 
@@ -209,7 +215,7 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
           </div>
           {/* </form  > */}
     </div>
-    <div  className={`${hide==true?'invisible':'visible'} md:relative md:top-[-1000px]  `}>
+    <div  className={`${hide==true?'invisible':'visible'} md:relative md:top-[-640px] right-50  `}>
     <div   className=" container px-5 py-12   md:absolute md:right-[500px]  flex">
       <div className="lg:w-1/4 md:w-1/2 bg-white border-2 absolute right-[-0px] top-20  border-pink-500 rounded-lg p-8 flex flex-col md:ml-auto w-[250px] h-[500px] mr-[60px] md:mr-[-10px]   md:mt-0 md:relative z-10 shadow-md">
       <button onClick={Modal} className=' flex justify-end text-pink-400 text-2xl'>X</button>

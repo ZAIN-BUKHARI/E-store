@@ -1,13 +1,11 @@
 import React from 'react'
-// 'https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=400'
-// 'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=400'
-// 'https://www.pexels.com/photo/close-up-photo-of-sneakers-2529146/'
-// https://www.youtube.com/watch?v=yVCEb9Cnpz4
-// https://www.youtube.com/watch?v=0KKOjFULFZ4
+import styled from 'styled-components'
+
+
 const Section = () => {
   return (
     <div className='main body-font shadow-lg shadow-gray-600 '>
-      <div className='overlay md:h-[653px] h-[721px]' > </div>
+      <div className='overlay  md:h-[599px] h-[742px]' > </div>
       <video className='videocss' src='shoe.mp4 ' autoPlay muted loop />
       <div className='content'>
         <h1 className='text-5xl' >Welcome</h1>
