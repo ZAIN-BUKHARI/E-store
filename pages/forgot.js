@@ -28,7 +28,7 @@ const Emailsend = async (e)=>{
   e.preventDefault()
       
   const data = {email,newpassword,confirmpassword}
-  let response =  await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/forgotpassword`,{
+  let response =  await fetch(`/api/forgotpassword`,{
     method:'POST',
     headers:{
       'Content-Type':'application/json'

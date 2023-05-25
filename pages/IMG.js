@@ -17,7 +17,7 @@ const IMG = () => {
         e.preventDefault()
         const data = new FormData()
         data.append('file',IMG)
-       axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/IMG`,data)
+       axios.post(`/api/IMG`,data)
       .then(success=>{console.log(success)})
          
     

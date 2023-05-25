@@ -24,7 +24,7 @@ const Signup = () => {
     if(name!='' && email!=''&& password!=''){
     e.preventDefault()
     const data = {name,email,password}
-    let response =  await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`,{
+    let response =  await fetch(`/api/signup`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'

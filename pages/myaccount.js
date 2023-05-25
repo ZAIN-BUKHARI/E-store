@@ -42,7 +42,7 @@ useEffect(()  => {
   const changing =async ()=>{
 
   
-   let user = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/findUserEmail`,{
+   let user = await fetch(`/api/findUserEmail`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'
@@ -65,7 +65,7 @@ useEffect(()  => {
     e.preventDefault()
     
     const data = {address,phone,city,name,token:localStorage.getItem('token')}
-    let response =  await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/accountsetting`,{
+    let response =  await fetch(`/api/accountsetting`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'

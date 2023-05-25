@@ -136,7 +136,7 @@ const select =(COLOR,SIZE)=>{
                  { Color && Object.keys(variants[Color]).includes('XL') && <option value={'XL'}>XL</option>}
                  { Color && Object.keys(variants[Color]).includes('XXL') && <option value={'XXL'}>XXL</option>}
                  { Color && Object.keys(variants[Color]).includes('A') && <option value={'Adjustable'}>Adjustable</option>}
-                 { Color && Object.keys(variants[Color]).includes('U') && <option value={'Un-Stitch'}>Un-Stitch</option>}
+                 { Color && Object.keys(variants[Color]).includes('U') && <option value={'UnStitch'}>UnStitch</option>}
               </select>
               <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4" viewBox="0 0 24 24">
@@ -170,7 +170,10 @@ const select =(COLOR,SIZE)=>{
 </section>
         {product.AvailableQty<=0 && <div>The product is currently out of stock :(</div>}
     <Wear/>
-    
+    <div className='flex h-[300px]  justify-center' >
+
+    <img className='w-[70%] h-[300px]'  src='x3.jpg' />
+</div>
     </>
   )
 }

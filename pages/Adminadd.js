@@ -60,7 +60,7 @@ const addProducts = (admin) => {
       else if(e.target.name=='file'){
         const img = new FormData()
           img.append('file',e.target.files[0])
-         let b= await axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/IMG`,img)
+         let b= await axios.post(`/api/IMG`,img)
            setFile(`/uploads/`+ b.data.success.filename)
            
         
@@ -88,7 +88,7 @@ const addProducts = (admin) => {
         const data = {slug,title,file,desc,price,size,color,AvailableQty,category,Profit,Feature}
         console.log(data)
         
-    let response =  await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/AddProducts`,{
+    let response =  await fetch(`/api/AddProducts`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'
@@ -142,7 +142,7 @@ const addProducts = (admin) => {
         e.preventDefault()
         if(delslug!=''){
         const data = {delslug}
-    let response =  await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/Delproduct`,{
+    let response =  await fetch(`/api/Delproduct`,{
       method:'DELETE',
       headers:{
         'Content-Type':'application/json'

@@ -14,7 +14,7 @@ const products = (admin) => {
   useEffect(() => {
     const product =async ()=>{
 
-      let response =  await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/gettingadminproducts`)  
+      let response =  await fetch(`/api/gettingadminproducts`)  
       let a =await response.json()
       setProducts(a.products)
       // console.log(a.products)
