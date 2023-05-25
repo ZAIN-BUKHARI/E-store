@@ -4,9 +4,9 @@ import styled from 'styled-components'
 
 const Section = () => {
   return (
-    <div className='main body-font shadow-lg shadow-gray-600 '>
-      <div className='overlay  md:h-[599px] h-[742px]' > </div>
-      <video className='videocss' src='shoe.mp4 ' autoPlay muted loop />
+    <div className='main body-font shadow-lg shadow-gray-600  '>
+      <div className='overlay   h-full' > </div>
+      <video className='videocss  ' src='shoe.mp4 ' autoPlay muted loop />
       <div className='content'>
         <h1 className='text-5xl' >Welcome</h1>
         <p className='text-sm' >To Zainy'sWear.</p>

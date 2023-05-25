@@ -178,7 +178,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             
           
           
-            <Link href={'/twopc?=two'}><li className="flex cursor-pointer  hover:text-gray-600" 
+            <Link href={'/twopc'}><li className="flex cursor-pointer  hover:text-gray-600" 
             // onClick={onMouseli2O}
             >
             2pcs

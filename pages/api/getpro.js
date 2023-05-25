@@ -8,6 +8,7 @@ const handler= async (req, res)=> {
     if(!limit) limit=1;
     const skip= (page-1)*2
     const pro = await Product.find({category:'tshirt'}).skip(skip).limit(limit)
+    
     res.status(200).send(pro)
     
 }
