@@ -144,7 +144,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
       </div>
       <div className="nav ">
         {/* <ul className="   font-bold flex cursor-pointer   items-center md:text-md "> */}
-        <Media className=" space-x-1 md:space-x-10   font-bold flex cursor-pointer   items-center  ">
+        <Media className=" space-x-1 md:space-x-10   font-bold flex    items-center  ">
           
             <Link href={`/Tshirts`}><li className="flex hover:text-gray-600  " 
             // onClick={onMouseli1O}

@@ -89,7 +89,7 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
       clearCart()
       setHide(true)
       toast.error(a.error, {
-        position: "top-right",
+        position: "bottom",
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -102,7 +102,7 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
     }
   }else{
     toast.error('Fill address form correctly', {
-      position: "top-right",
+      position: "bottom",
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -185,7 +185,7 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
           </div>
           {/* </form  > */}
     </div>
-    <div  className={`${hide==true?'invisible':'visible'} md:relative md:top-[-640px] relative top-[-660px]   right-50  `}>
+    <div href={'#'}  className={`${hide==true?'invisible':'visible'} md:relative md:top-[-640px] relative top-[-700px]   right-50  `}>
     <div   className=" container px-5 py-12   md:absolute md:right-[500px]  flex">
       <div className="lg:w-1/4 md:w-1/2 bg-white border-2 absolute right-[-0px] top-20  border-pink-500 rounded-lg p-8 flex flex-col md:ml-auto w-[250px] h-[500px] mr-[60px] md:mr-[-10px]   md:mt-0 md:relative z-10 shadow-md">
       <button onClick={Modal} className=' flex justify-end text-pink-400 text-2xl'>X</button>
