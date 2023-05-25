@@ -3,8 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import passwordupdater from './api/passwordupdater';
-
+import axios from 'axios';
 
 
 
@@ -17,9 +16,6 @@ const myaccount = () => {
   const [phone, setPhone] = useState('')
   const [city, setCity] = useState('')
   const [matching, setMatching] = useState('')
-  // const [password, setPassword] = useState('')
-  // const [confirmpassword, setConfirmpassword] = useState('')
-  // const [newpassword, setnewpassword] = useState('')
   
 
   const Change = async (e) =>{
@@ -58,12 +54,15 @@ useEffect(()  => {
 }, [])
 
 
+
+
+
  
 
   
   const submitForm = async  (e) =>{
     e.preventDefault()
-    
+    if(name.length>=3 && phone.length>=10 && address.length>=6 && city.length>=4){
     const data = {address,phone,city,name,token:localStorage.getItem('token')}
     let response =  await fetch(`/api/accountsetting`,{
       method:'POST',
@@ -98,7 +97,18 @@ useEffect(()  => {
         });
 
     }
-    
+  }else{
+    toast.error('Fill form correctly', {
+      position: "top-left",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
      
     
   }

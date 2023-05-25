@@ -142,7 +142,7 @@ const select =(COLOR,SIZE)=>{
         <div className="flex">
           <span className="title-font font-medium text-2xl text-gray-900">₨ {product.price}</span>
           
-          <button disabled={product.AvailableQty<=0}  onClick={()=>{AddToCart(slug ,1,product.price,product.title,Size,Color)}}  className="flex disabled:bg-pink-300 ml-8 text-white bg-pink-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">Add</button>
+          <button disabled={product.AvailableQty<=0}  onClick={()=>{AddToCart(slug ,1,product.price,product.title,Size,Color)}}  className="flex disabled:bg-pink-300 ml-8 text-white bg-pink-500 border-0 py-2 px-2  focus:outline-none hover:bg-pink-600 rounded">Add</button>
          {user.value && <button disabled={product.AvailableQty<=0} onClick={()=>{buyNow(slug ,1,product.price,product.title,Size,Color)}} className="flex ml-8 disabled:bg-pink-300 text-white bg-pink-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">Buy now</button>}
          {!user.value && <Link href={'/login'}><button disabled={product.AvailableQty<=0}  className="flex ml-8  disabled:bg-pink-300 text-white bg-pink-300 border-0 py-2 px-2 md:px-6 focus:outline-none  rounded">Log in</button></Link> }
           

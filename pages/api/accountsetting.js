@@ -12,8 +12,8 @@ const handler= async (req,res)=>{
             let token =req.body.token
             const {name,phone,address,city}=req.body
             let find= jsonwebtoken.verify(token,'secret123')
-            let settings = await User.findOneAndUpdate({email:find.email},{address,name,phone,city})
-             let b=await settings.save()
+            await User.findOneAndUpdate({email:find.email},{name,address,city,phone})
+            
             res.status(200).json({success:"success"})
         }
 

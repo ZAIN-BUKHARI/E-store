@@ -13,7 +13,6 @@ import emailjs from '@emailjs/browser';
 
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { get } from 'mongoose';
 
 const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
   const form = useRef();
@@ -60,7 +59,8 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
 
   const submitForm = async  (e) =>{
     e.preventDefault()
-    
+    console.log(name,address,city,phone)
+    if(name && phone && address && city){
     const data = {email,cart,subTotal,name,email,phone,address,city}
     let response =  await fetch(`/api/order`,{
       method:'POST',
@@ -100,6 +100,18 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
         });
 
     }
+  }else{
+    toast.error('Fill address form correctly', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
     
   }
   
@@ -116,7 +128,6 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
       body:JSON.stringify({token:localStorage.getItem('token')})
     })
     let a = await response.json()
-    
     
     setName(a.success.name)
     setPhone(a.success.phone)
