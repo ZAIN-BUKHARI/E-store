@@ -125,7 +125,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
   };
   return (
     <div  className=" py-2 shadow-gray-600 md:h-11 h-[100px] bg-white shadow-md sticky z-10 top-0 flex md:justify-start  md:text-xl md:flex-row flex-col items-center justify-between">
-      <div className="logo mx-5">
+      <div className="logo mx-5   ">
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -305,7 +305,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
                           cart[K].name ,
                           cart[K].price,
                           cart[K].size,
-                          cart[K].variant
+                          cart[K].variant,
                         );
                       }}
                       className="text-pink-500 cursor-pointer"
