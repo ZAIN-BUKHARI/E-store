@@ -59,8 +59,7 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
 
   const submitForm = async  (e) =>{
     e.preventDefault()
-    console.log(name,address,city,phone)
-    if(name && phone && address && city){
+    
     const data = {email,cart,subTotal,name,email,phone,address,city}
     let response =  await fetch(`/api/order`,{
       method:'POST',
@@ -89,7 +88,7 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
       clearCart()
       setHide(true)
       toast.error(a.error, {
-        position: "bottom",
+        position: "bottom-center",
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -100,18 +99,8 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
         });
 
     }
-  }else{
-    toast.error('Fill address form correctly', {
-      position: "bottom",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
-  }
+  
+  
     
   }
   
@@ -193,7 +182,7 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
         <p className="leading-relaxed mb-5 text-gray-600">currently available payment methods </p>
   
         <button onClick={selectionColor} disabled={cash}  className='disabled:border-pink-500  text-3xl py-10 mb-8 border-2 border-rounded rounded-2xl'>Cash on Delivery</button>
-         <Link href={`#`}><button   disabled={disabled2} onClick={submitForm} method='POST'   className={`text-white  disabled:bg-pink-300  bg-pink-500 mt-20 border-0 py-2 px-6  focus:outline-none  ${cash==false?disabled2:''} hover:bg-pink-600 rounded text-lg`}>Proceed</button></Link>
+         <Link href={`#`}><button   disabled={disabled2} onClick={submitForm} method='POST'   className={`text-white  disabled:bg-pink-300  bg-pink-500 md:mt-20 mt-5 border-0 py-2 px-6  focus:outline-none  ${cash==false?disabled2:''} hover:bg-pink-600 rounded text-lg`}>Proceed</button></Link>
         <p className="text-xs text-gray-500 mt-3">www.Zainy'sWear.com !  enjoy your shopping.</p>
       </div>
      </div>
