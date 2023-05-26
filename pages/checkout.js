@@ -33,7 +33,9 @@ const ColumnsWrapper = styled.div`
 const Box = styled.div`
   background-color: #fff;
   border-radius: 10px;
-  padding: 30px;
+  padding: 0 0 30px;
+  // padding:30px
+  
 `;
 
 const ProductInfoCell = styled.td`
@@ -92,6 +94,7 @@ const Checkout = ({cart,clearCart,  AddToCart,removeFromCart,subTotal}) => {
   const [hide, setHide] = useState(true)
   const [disabled2, setDisabled2] = useState(true)
   const [matching, setMatching] = useState('')
+  const [validate, setvaliate] = useState(false)
   
   
 
@@ -156,6 +159,12 @@ const Change = async (e) =>{
     setAddress(a.success.address)
     setCity(a.success.city)
     setEmail(a.success.email)
+    if(a.success.phone.length>=10){
+      setvaliate(true)
+    }else{
+      setvaliate(false)
+    }
+    
   }
   getUserdata()
 
@@ -163,7 +172,6 @@ const Change = async (e) =>{
 
 const addresssubmit = async  (e) =>{
   e.preventDefault()
-  if(name.length>=3 && phone.length>=8 && address.length>=6 && city.length>=4){
   const data = {address,phone,city,name,token:localStorage.getItem('token')}
   let response =  await fetch(`/api/accountsetting`,{
     method:'POST',
@@ -173,7 +181,9 @@ const addresssubmit = async  (e) =>{
     body:JSON.stringify(data)
   })
   let a = await response.json()
+  
   if(a.success){
+    setvaliate(true)
      toast.success('successfully updated!', {
       position: "top-left",
       autoClose: 2000,
@@ -186,6 +196,7 @@ const addresssubmit = async  (e) =>{
       });
   }
   else if(a.error){
+    setvaliate(false)
     toast.error(a.error, {
       position: "top-left",
       autoClose: 2000,
@@ -198,18 +209,9 @@ const addresssubmit = async  (e) =>{
       });
 
   }
-}else{
-  toast.error('Fill form correctly', {
-    position: "top-left",
-    autoClose: 2000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    });
-}
+
+    
+
    
   
 }
@@ -229,7 +231,7 @@ const addresssubmit = async  (e) =>{
                 <thead>
                   <tr>
                     <th>Product</th>
-                    <th className=''>Quantity</th>
+                    <th className='md:pl-6'>Quantity</th>
                     <th >Variant</th>
                     {/* <th className=''>Size</th> */}
                     <th>Price</th>
@@ -256,7 +258,7 @@ const addresssubmit = async  (e) =>{
                           </Button>
                       </td>
                       <td>
-                      <div className={`border-2 border-gray-300 ml-1 bg-${cart[K].variant}-500 rounded-full w-6 h-6 focus:outline-none text-center  pl-[2px]`}>{cart[K].size}</div>
+                      <div className={`border-2 border-gray-300 ml-1 bg-${cart[K].variant}-500 rounded-full w-6 h-6 focus:outline-none text-center  `}><span  >{cart[K].size}</span></div>
                       </td>
                       {/* <td>
                         {cart[K].size}
@@ -321,11 +323,12 @@ const addresssubmit = async  (e) =>{
                       onClick={addresssubmit}>
                  Save address
               </Button>
-              <Link href={'/payment'}><Button black block
-                      
-                      >
-                Continue to payment
-              </Button></Link>
+
+            {validate == true  && <Link  href={'/payment'}><Button className='' black block>Continue to payment</Button></Link>}
+            {validate ==  false  && <Link className='bg-gray'  href={'#'}>
+              <Button className='' black block>Fill address form correctly</Button>
+            </Link>}
+
             </Box>
           )}
         </ColumnsWrapper>
