@@ -84,7 +84,7 @@ export async function getServerSideProps(context) {
     if(!page) page=1;
     if(!limit) limit=10;
     const skip= (page-1)*2;
-  let products = await Product.find({ category : '3pc'}).skip(skip).limit(20)
+  let products = await Product.find({ category : '3pcs'}).skip(skip).limit(20)
   products.reverse()
   let Tshirts={}
   for(let item of products){

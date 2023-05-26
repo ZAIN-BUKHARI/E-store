@@ -44,7 +44,7 @@ const MYOrder = (order) => {
         {Object.keys(products).map((item)=>{
            return <> 
            <div   className="flex border-t border-gray-200 py-2">
-           <span className="text-gray-500">{products[item].name}({products[item].size}/{Capital(products[item].variant)})</span>
+           <span className="text-gray-500">{products[item].name.slice(0,12)}({products[item].size}/{Capital(products[item].variant)})</span>
            <span className="m-auto text-gray-900">{products[item].qty}</span>
            <span className="m-auto text-gray-900">Rs {products[item].price}</span>
          </div>
