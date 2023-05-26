@@ -135,52 +135,7 @@ const Change = async (e) =>{
  }
 }
 
-  const submitForm = async  (e) =>{
-    e.preventDefault()
-    
-    const data = {email,cart,subTotal,name,email,phone,address,city}
-    let response =  await fetch(`/api/order`,{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      body:JSON.stringify(data)
-    })
-    let a = await response.json()
-    if(a.success){
-      clearCart()
-       toast.success('Order Placed!', {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
-        router.push((`/MyOrder?id=`+a.redirect._id))
-        
-    }
-    else if(a.error){
-      clearCart()
-      setHide(true)
-      toast.error(a.error, {
-        position: "bottom-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
-
-    }
   
-  
-    
-  }
   
 
    useEffect(()=>{
@@ -267,10 +222,8 @@ const addresssubmit = async  (e) =>{
      <Center>
         <ColumnsWrapper>
           <Box>
-            <h2>Cart</h2>
-            {/* {!cartProducts?.length && (
-              <div>Your cart is empty</div>
-            )} */}
+          <h2 className='font-bold text-center' >Cart</h2>
+           
             {cart && (
               <Table>
                 <thead>
@@ -316,7 +269,8 @@ const addresssubmit = async  (e) =>{
                   <tr>
                     <td></td>
                     <td></td>
-                    <td>${subTotal}</td>
+                    <td></td>
+                    <td className='font-bold' >${subTotal}</td>
                   </tr>
                 </tbody>
               </Table>
@@ -324,7 +278,7 @@ const addresssubmit = async  (e) =>{
           </Box>
           {cart && (
             <Box>
-              <h2>Order information</h2>
+              <h1 className='font-bold text-center' >Order information</h1>
               <Input type="text"
                      placeholder="Name"
                      value={name}
@@ -367,10 +321,11 @@ const addresssubmit = async  (e) =>{
                       onClick={addresssubmit}>
                  Save address
               </Button>
-              <Button black block
-                      onClick={submitForm}>
+              <Link href={'/payment'}><Button black block
+                      
+                      >
                 Continue to payment
-              </Button>
+              </Button></Link>
             </Box>
           )}
         </ColumnsWrapper>
