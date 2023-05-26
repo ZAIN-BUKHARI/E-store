@@ -255,8 +255,8 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             
            <Link href={'/AllOrders'}> <li className="py-2 hover:text-white hover:p-2 text-black cursor-pointer font-bold text-sm">Orders</li></Link>
            <hr className=""/>
-           <Link href={'/myaccount'}> <li className="py-2 hover:text-white hover:p-2 text-black cursor-pointer font-bold text-sm">Accounts</li></Link>
-           <hr className=""/>
+           {/* <Link href={'/myaccount'}> <li className="py-2 hover:text-white hover:p-2 text-black cursor-pointer font-bold text-sm">Accounts</li></Link>
+           <hr className=""/> */}
             <li onClick={logout} className="py-1 font-bold cursor-pointer hover:p-2 hover:text-white text-sm">Log out</li>
             <hr className="py-2"/>
           </ul>
@@ -291,10 +291,10 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
                 <div className="flex my-5">
                   
                   
-                 {cart[K].size && cart[K].variant && <div className="w-2/3 pt-3 font-normal">{cart[K].name}({cart[K].size}/{Capital(cart[K].variant)})</div>}
-                 {!cart[K].size && !cart[K].variant && <div className="w-2/3 font-normal">{cart[K].name}</div>}
-                 {cart[K].size && !cart[K].variant && <div className="w-2/3 font-normal">{cart[K].name}({cart[K].size})</div>}
-                 {!cart[K].size && cart[K].variant && <div className="w-2/3 font-normal">{cart[K].name}({Capital(cart[K].variant)})</div>}
+                 {cart[K].size && cart[K].variant && <div className="w-2/3 pt-3 font-normal"  >{cart[K].name.slice(0,12)}({cart[K].size}/{Capital(cart[K].variant)})</div>}
+                 {!cart[K].size && !cart[K].variant && <div className="w-2/3 pt-3 font-normal">{cart[K].name.slice(0,12)}</div>}
+                 {cart[K].size && !cart[K].variant && <div className="w-2/3 pt-3 font-normal" >{cart[K].name.slice(0,12)}({cart[K].size})</div>}
+                 {!cart[K].size && cart[K].variant && <div className="w-2/3 pt-3 font-normal" >{cart[K].name.slice(0,12)}({Capital(cart[K].variant)})</div>}
                   
                   <div className="flex items-center font-semibold justify-center w-1/3  text-sm ">
                     
@@ -340,7 +340,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             );
           })}
         </ol>
-        <span className="subtotal  ">Subtotal : {subTotal}</span>
+        <span className="subtotal font-bold  ">Subtotal : {subTotal}</span>
         <div className="flex mb-4 mt-4">
           {user.value && <Link href={"/checkout"}>
             <button disabled={Object.keys(cart).length===0} className="flex mx-2 text-white disabled:bg-pink-300 bg-pink-500 border-0 py-2 px-2 focus:outline-none hover:bg-pink-600 rounded text-sm">

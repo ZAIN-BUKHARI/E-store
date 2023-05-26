@@ -60,7 +60,7 @@ useEffect(()  => {
  
 
   
-  const submitForm = async  (e) =>{
+  const addresssubmit = async  (e) =>{
     e.preventDefault()
     if(name.length>=3 && phone.length>=10 && address.length>=6 && city.length>=4){
     const data = {address,phone,city,name,token:localStorage.getItem('token')}

@@ -4,7 +4,7 @@ import jsonwebtoken from 'jsonwebtoken'
 
 const handler= async (req,res)=>{
     if(req.method=='POST'){
-        if(req.body.phone.length!=11 ){
+        if(!req.body.phone.length>=10 ){
             res.status(200).json({error:"Number not valid:)"})
             return
         }else{
