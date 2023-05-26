@@ -27,6 +27,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
   // const [drop3rd, setDrop3rd] = useState({value:false})
   // const [drop4th, setDrop4th] = useState({value:false})
   // USER LI DROP DOWN
+  console.log(cart)
   const onMouseOver = () =>{
     if(drop.value==false){
     setDrop({value:true})
@@ -290,7 +291,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
                 <div className="flex my-5">
                   
                   
-                 {cart[K].size && cart[K].variant && <div className="w-2/3 font-normal">{cart[K].name}({cart[K].size}/{Capital(cart[K].variant)})</div>}
+                 {cart[K].size && cart[K].variant && <div className="w-2/3 pt-3 font-normal">{cart[K].name}({cart[K].size}/{Capital(cart[K].variant)})</div>}
                  {!cart[K].size && !cart[K].variant && <div className="w-2/3 font-normal">{cart[K].name}</div>}
                  {cart[K].size && !cart[K].variant && <div className="w-2/3 font-normal">{cart[K].name}({cart[K].size})</div>}
                  {!cart[K].size && cart[K].variant && <div className="w-2/3 font-normal">{cart[K].name}({Capital(cart[K].variant)})</div>}
@@ -306,12 +307,14 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
                           cart[K].price,
                           cart[K].size,
                           cart[K].variant,
+                          cart[K].image
                         );
                       }}
                       className="text-pink-500 cursor-pointer"
                     />
                     
                     <span className="mx-2">{cart[K].qty} </span>
+                    
                     <AiOutlineMinusCircle
                       onClick={() => {
                         removeFromCart(
@@ -320,16 +323,19 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
                           cart[K].price,
                           cart[K].name,
                           cart[K].size,
-                          cart[K].variant
+                          cart[K].variant,
+                          cart[K].image
                         );
                       }}
                       className="text-pink-500 cursor-pointer"
                     />
                   </div>
                   
+              <span  ><img className="h-10 mt-2 w-10"  src={cart[K].image} alt="hello" /></span>
                 </div>
               </li>
               <div className='bg-white h-[1px] flex flex-col w-50'></div>
+             
               </>
             );
           })}

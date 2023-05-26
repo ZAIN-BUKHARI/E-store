@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps
     setSubTotal(subt)
     
   }
-  const AddToCart  =  (itemCode,qty,price,name,size,variant) =>{ 
+  const AddToCart  =  (itemCode,qty,price,name,size,variant,image) =>{ 
     toast.success('Added to cart ', {
       position: "top-center",
       autoClose: 1000,
@@ -81,7 +81,7 @@ function MyApp({ Component, pageProps
       newCart[itemCode].qty= cart[itemCode].qty + qty
     }
     else{
-      newCart[itemCode]= {qty: 1 ,price , name, size, variant}
+      newCart[itemCode]= {qty: 1 ,price , name, size, variant, image}
     }
       setCart(newCart)
      console.log(newCart)
@@ -114,7 +114,7 @@ function MyApp({ Component, pageProps
     saveCart({})
     setCart({})
   }
-  const removeFromCart = (itemCode,qty,price , name , size , variant) =>{
+  const removeFromCart = (itemCode,qty,price , name , size , variant,image) =>{
     let newCart = JSON.parse(JSON.stringify(cart));
     if(itemCode in cart){
       newCart[itemCode].qty= cart[itemCode].qty - qty
