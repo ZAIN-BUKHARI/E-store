@@ -82,7 +82,8 @@ const addProducts = (admin) => {
   const submitform = async (e) =>{
     e.preventDefault()
    
-       
+       console.log(size)
+       console.log(color)
         if( slug!='' && title!='' && desc!='' && price!=''  && AvailableQty!='' && category!=''&& Profit!=''){
         const data = {slug,title,file,desc,price,size,color,AvailableQty,category,Profit,Feature}
         console.log(data)
@@ -230,9 +231,10 @@ const addProducts = (admin) => {
                   <option value={'maron'}>Maron</option>
                   <option value={'purple'}>purple</option>
                   <option value={'lpurple'}>Light purple</option>
+                  <option value={'gray'}>Gray</option>
               </select>
             {/* <TextField onChange={handleChange} value={size} name="size" label="Size" variant="outlined" /> */}
-            <select value={color} onChange={handleChange} name='size'  className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">
+            <select value={size} onChange={handleChange} name='size'  className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">
                   <option value={''}>Size</option>
                    <option value={'S'}>S</option>
                    <option value={'M'}>M</option>

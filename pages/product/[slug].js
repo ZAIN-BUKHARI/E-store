@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Error from 'next/error'
 import Link from 'next/link'
-import Image from 'next/image'
+import Wear from '../../components/Wear'
 
 
 
@@ -41,7 +41,7 @@ useEffect(()=>{
 // ONCHNAGE FUNTION
 const select =(COLOR,SIZE)=>{
   
-  let url =`${process.env.NEXT_PUBLIC_HOST}/product/${variants[COLOR][SIZE]['slug']}`
+  let url =`/product/${variants[COLOR][SIZE]['slug']}`
   router.push(url)
 
 }
@@ -50,8 +50,8 @@ const select =(COLOR,SIZE)=>{
 
   
   const Capital = (word) =>{
-       return word[0].toUpperCase()+ word.slice(1)
-      // return word.charAt(0).toUpperCase()+ word.slice(1)
+      //  return word[0].toUpperCase()+ word.slice(1)
+      return word.charAt(0).toUpperCase()+ word.slice(1)
       
      
   }
@@ -125,6 +125,8 @@ const select =(COLOR,SIZE)=>{
             {Object.keys(variants).includes('yellow') && Object.keys(variants['yellow']).includes(Size) && <button onClick={()=>{select('yellow',Size)}} className={`border-2 ${Color==='yellow'?'border-black':'border-gray-300'} ml-1 bg-amber-600 rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('purple') && Object.keys(variants['purple']).includes(Size) && <button onClick={()=>{select('purple',Size)}} className={`border-2 ${Color==='purple'?'border-black':'border-gray-300'} ml-1 bg-purple-800 rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('lpurple') && Object.keys(variants['lpurple']).includes(Size) && <button onClick={()=>{select('lpurple',Size)}} className={`border-2 ${Color==='lpurple'?'border-black':'border-gray-300'} ml-1 bg-purple-400 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('white') && Object.keys(variants['white']).includes(Size) && <button onClick={()=>{select('white',Size)}} className={`border-2 ${Color==='white'?'border-black':'border-gray-300'} ml-1 bg-white rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('gray') && Object.keys(variants['gray']).includes(Size) && <button onClick={()=>{select('gray',Size)}} className={`border-2 ${Color==='gray'?'border-black':'border-gray-300'} ml-1 bg-gray-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
           </div>
           <div className="flex ml-6 items-center">
             <span className="mr-3">Size</span>
@@ -170,6 +172,7 @@ const select =(COLOR,SIZE)=>{
   </div>
 </section>
         {product.AvailableQty<=0 && <div>The product is currently out of stock :(</div>}
+        <Wear/>
 
     </>
   )

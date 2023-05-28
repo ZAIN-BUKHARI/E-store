@@ -154,6 +154,7 @@ const UpdateProduct = ({
                   <option value={'maron'}>Maron</option>
                   <option value={'purple'}>purple</option>
                   <option value={'lpurple'}>Light purple</option>
+                  <option value={'gray'}>Gray</option>
               </select> 
             <select value={size} onChange={handleChange} name='size'  className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">
                   <option value={''}>Size</option>
