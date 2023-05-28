@@ -4,9 +4,9 @@ import Product from '../../../models/Product'
 const handler= async (req, res)=> {
     if(req.method=='POST'){
         try{ 
-           let b= req.body.slug
-        let p = await Product.findOneAndUpdate({b},{
-            slug:req.body.b,
+           const {slug,id}= req.body
+           let p = await Product.findByIdAndUpdate({_id:id},{
+            slug:slug,
             title:req.body.title,
             desc:req.body.desc,
             image:req.body.file,
@@ -19,9 +19,11 @@ const handler= async (req, res)=> {
             Feature:req.body.Feature
             
         })
+        let a = await p.save()
         res.status(200).json({ success:a })
        }
        catch(error){
+        console.log('error')
         res.status(200).json({ error:error })
        }
 }

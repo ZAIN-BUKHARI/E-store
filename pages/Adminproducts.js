@@ -17,7 +17,6 @@ const products = (admin) => {
       let response =  await fetch(`/api/gettingadminproducts`)  
       let a =await response.json()
       setProducts(a.products)
-      // console.log(a.products)
     }
     product()
   }, [])

@@ -27,7 +27,6 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
   // const [drop3rd, setDrop3rd] = useState({value:false})
   // const [drop4th, setDrop4th] = useState({value:false})
   // USER LI DROP DOWN
-  console.log(cart)
   const onMouseOver = () =>{
     if(drop.value==false){
     setDrop({value:true})

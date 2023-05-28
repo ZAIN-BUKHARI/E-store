@@ -18,19 +18,16 @@ const orders = (admin) => {
   
 //STATUS
   const status=async(_id)=>{
-    console.log(_id)
     const data = {_id,Marked}
     const dataone = {_id}
     if(!Marked){
       await axios.post('/api/Admin/status',dataone).then(res=>{
-        console.log(res)
         // if(res.data.orders.status=='done'){
           setMarked(true)
         // }
       })
     }else{
       await axios.post('/api/Admin/status',data).then(res=>{
-        console.log(res)
           setMarked(false)
           })
     }

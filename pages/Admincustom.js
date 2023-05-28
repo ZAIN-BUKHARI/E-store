@@ -68,7 +68,6 @@ const QuantityLabel = styled.span`
 const Admincustom = (admin) => {
     const [search,setsearch]=useState('')
     const [product,setproduct]=useState([])
-  console.log(search)
     const handleChange=(e)=>{
       if(e.target.name=='search'){
         setsearch(e.target.value)
@@ -77,7 +76,6 @@ const Admincustom = (admin) => {
     const Search=async(e)=>{
      e.preventDefault()
      axios.post('/api/Admin/search',{search}).then(res=>{
-        console.log(res)
         setproduct(res.data.product)
      })
     }

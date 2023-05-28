@@ -6,6 +6,7 @@ const handler= async (req, res)=> {
     let product = await Product.findOne({slug})
     res.status(200).send({product})
     
+    
 }
   
   

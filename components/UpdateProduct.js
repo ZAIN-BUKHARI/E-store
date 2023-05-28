@@ -8,6 +8,7 @@ import {
   } from "@mui/material";
   import BaseCard from "../src/components/baseCard/BaseCard";
 const UpdateProduct = ({
+    _id:existid,
     slug:existslug,
     title:existtitle,
     color:existcolor,
@@ -21,6 +22,7 @@ const UpdateProduct = ({
     image:existfile,
 }) => {
      // UPDATE PRODUCT SYSTEM HERE 
+    const [id, setid] = useState(existid||'')
     const [slug, setslug] = useState(existslug||'')
     const [title, settitle] = useState(existtitle||'')
   const [desc, setdesc] = useState(existdesc||'')
@@ -70,14 +72,15 @@ const UpdateProduct = ({
       setFile(e.target.value)
     }
   }
+  
   const submitform = async (e) =>{
     e.preventDefault()
    
        
-        if( slug!='' && title!='' && desc!='' && price!=''  && AvailableQty!='' && category!=''&& Profit!=''){
-        const data = {slug,title,file,desc,price,size,color,AvailableQty,category,Profit,Feature}
-        console.log(data)
-        
+        if(id!='', slug!='' && title!='' && desc!='' && price!=''  && AvailableQty!='' && category!=''&& Profit!=''){
+        const data = {id,slug,title,file,desc,price,size,color,AvailableQty,category,Profit,Feature}
+        console.log(slug)
+        console.log(id)
     let response =  await fetch(`/api/Admin/update`,{
       method:'POST',
       headers:{
@@ -88,6 +91,7 @@ const UpdateProduct = ({
     let a = await response.json()
     console.log(a)
     if(a.success){
+       
        toast.success('Successfully product updated!', {
         position: "bottom-center",
         autoClose: 2000,
@@ -98,7 +102,6 @@ const UpdateProduct = ({
         progress: undefined,
         theme: "light",
         });
-        
        
     }else if(a.error){
       toast.info('You put some wrong info! Try again ', {
@@ -133,6 +136,8 @@ const UpdateProduct = ({
     <Grid item xs={12} lg={12}>
         <BaseCard >
           <Stack spacing={3}>
+            
+          <TextField onChange={handleChange} value={slug}  name="slug" label="Slug" variant="outlined"  />
             <TextField onChange={handleChange} value={title} name="title" label="Title" variant="outlined" />
             <select value={color} onChange={handleChange} name='color'   className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">
                   <option value={''}>color</option>
