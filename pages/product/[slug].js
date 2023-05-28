@@ -127,6 +127,7 @@ const select =(COLOR,SIZE)=>{
             {Object.keys(variants).includes('lpurple') && Object.keys(variants['lpurple']).includes(Size) && <button onClick={()=>{select('lpurple',Size)}} className={`border-2 ${Color==='lpurple'?'border-black':'border-gray-300'} ml-1 bg-purple-400 rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('white') && Object.keys(variants['white']).includes(Size) && <button onClick={()=>{select('white',Size)}} className={`border-2 ${Color==='white'?'border-black':'border-gray-300'} ml-1 bg-white rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('gray') && Object.keys(variants['gray']).includes(Size) && <button onClick={()=>{select('gray',Size)}} className={`border-2 ${Color==='gray'?'border-black':'border-gray-300'} ml-1 bg-gray-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('dgreen') && Object.keys(variants['dgreen']).includes(Size) && <button onClick={()=>{select('dgreen',Size)}} className={`border-2 ${Color==='dgreen'?'border-black':'border-gray-300'} ml-1 bg-green-800 rounded-full w-6 h-6 focus:outline-none`}></button>}
           </div>
           <div className="flex ml-6 items-center">
             <span className="mr-3">Size</span>

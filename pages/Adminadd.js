@@ -232,6 +232,7 @@ const addProducts = (admin) => {
                   <option value={'purple'}>purple</option>
                   <option value={'lpurple'}>Light purple</option>
                   <option value={'gray'}>Gray</option>
+                  <option value={'dgreen'}>Dark green</option>
               </select>
             {/* <TextField onChange={handleChange} value={size} name="size" label="Size" variant="outlined" /> */}
             <select value={size} onChange={handleChange} name='size'  className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">
@@ -247,7 +248,14 @@ const addProducts = (admin) => {
               </select>
             <TextField onChange={handleChange} value={price} type='number' name="price" label="Price" variant="outlined" />
             <TextField onChange={handleChange} value={AvailableQty} type='number' name="AvailableQty" label="Quantity" variant="outlined" />
-            <TextField onChange={handleChange} value={category} name="category" label="Category" variant="outlined" />
+            {/* <TextField onChange={handleChange} value={category} name="category" label="Category" variant="outlined" /> */}
+            <select value={category} onChange={handleChange} name='category'  className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">
+                  <option value={''}>category</option>
+                   <option value={'3pcs'}>3pcs suit</option>
+                   <option value={'2pcs'}>2pcs suit</option>
+                   <option value={'Frock'}>Frock</option>
+                   <option value={'unstitch'}>Unstitch</option>
+              </select>
             <TextField onChange={handleChange} value={desc} name="desc" label="Description" variant="outlined" multiline rows={4} /> 
             <TextField onChange={handleChange} value={Profit} name="Profit" type='number' label="Profit" variant="outlined"  />
             <TextField onChange={handleChange} value={Feature} name="Feature" type='text' label="Feature product" variant="outlined"  />
