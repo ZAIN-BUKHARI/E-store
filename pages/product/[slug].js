@@ -120,6 +120,11 @@ const select =(COLOR,SIZE)=>{
             {Object.keys(variants).includes('blue') && Object.keys(variants['blue']).includes(Size) && <button onClick={()=>{select('blue',Size)}} className={`border-2 ${Color==='blue'?'border-black':'border-gray-300'} ml-1 bg-blue-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('pink') && Object.keys(variants['pink']).includes(Size) && <button onClick={()=>{select('pink',Size)}} className={`border-2 ${Color==='pink'?'border-black':'border-gray-300'} ml-1 bg-pink-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('green') && Object.keys(variants['green']).includes(Size) && <button onClick={()=>{select('green',Size)}} className={`border-2 ${Color==='green'?'border-black':'border-gray-300'} ml-1 bg-green-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('tan') && Object.keys(variants['tan']).includes(Size) && <button onClick={()=>{select('tan',Size)}} className={`border-2 ${Color==='tan'?'border-black':'border-gray-300'} ml-1 bg-amber-600 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('brown') && Object.keys(variants['brown']).includes(Size) && <button onClick={()=>{select('brown',Size)}} className={`border-2 ${Color==='brown'?'border-black':'border-gray-300'} ml-1 bg-yellow-300 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('yellow') && Object.keys(variants['yellow']).includes(Size) && <button onClick={()=>{select('yellow',Size)}} className={`border-2 ${Color==='yellow'?'border-black':'border-gray-300'} ml-1 bg-amber-600 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('purple') && Object.keys(variants['purple']).includes(Size) && <button onClick={()=>{select('purple',Size)}} className={`border-2 ${Color==='purple'?'border-black':'border-gray-300'} ml-1 bg-purple-800 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('lpurple') && Object.keys(variants['lpurple']).includes(Size) && <button onClick={()=>{select('lpurple',Size)}} className={`border-2 ${Color==='lpurple'?'border-black':'border-gray-300'} ml-1 bg-purple-400 rounded-full w-6 h-6 focus:outline-none`}></button>}
           </div>
           <div className="flex ml-6 items-center">
             <span className="mr-3">Size</span>
@@ -128,8 +133,11 @@ const select =(COLOR,SIZE)=>{
                  { Color && Object.keys(variants[Color]).includes('S') && <option value={'S'}>S</option>}
                  { Color && Object.keys(variants[Color]).includes('M') && <option value={'M'}>M</option>}
                  { Color && Object.keys(variants[Color]).includes('L') && <option value={'L'}>L</option>}
-                 { Color && Object.keys(variants[Color]).includes('XL') && <option value={'XL'}>XXL</option>}
+                 { Color && Object.keys(variants[Color]).includes('XL') && <option value={'XL'}>XL</option>}
                  { Color && Object.keys(variants[Color]).includes('XXL') && <option value={'XXL'}>XXL</option>}
+                 { Color && Object.keys(variants[Color]).includes('A') && <option value={'A'}>Adjustable</option>}
+                 { Color && Object.keys(variants[Color]).includes('U') && <option value={'U'}>Unstitch</option>}
+                 { Color && Object.keys(variants[Color]).includes('ST') && <option value={'ST'}>Standard</option>}
               </select>
               <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4" viewBox="0 0 24 24">

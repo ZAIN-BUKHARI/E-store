@@ -43,6 +43,7 @@ const Twopc = ({products}) => {
             {products[P].size.includes('A') && <span className='border border-gray-300 mx-1 px-1'>Adjustable</span>}
             {products[P].size.includes('U') && <span className='border border-gray-300 mx-1 px-1'>Un-Stitch</span>}
             {products[P].size==Number && <span className='border border-gray-300 mx-1 px-1'>{products[P].size}</span>}
+            {products[P].size.includes('ST') && <span className='border border-gray-300 mx-1 px-1'>Standard</span>}
             </div> 
             <div className="mt-1">
             {products[P].color.includes('red') && <button className={`border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
@@ -57,6 +58,10 @@ const Twopc = ({products}) => {
             {products[P].color.includes('purple')  && <button className="border-2 border-gray-300 ml-1 bg-purle-500 rounded-full w-6 h-6 focus:outline-none"></button>}
             {products[P].color.includes('maron')  && <button className="border-2 border-gray-300 ml-1 bg-red-800 rounded-full w-6 h-6 focus:outline-none"></button>}
             {products[P].color.includes('silver')  && <button className="border-2 border-gray-300 ml-1 bg-white rounded-full w-6 h-6 focus:outline-none"></button>}
+            {products[P].color.includes('purple')  && <button className="border-2 border-gray-300 ml-1 bg-purple-800 rounded-full w-6 h-6 focus:outline-none"></button>}
+            {products[P].color.includes('lpurple')  && <button className="border-2 border-gray-300 ml-1 bg-purple-400 rounded-full w-6 h-6 focus:outline-none"></button>}
+
+            
              </div> 
           </div>
           </Link>

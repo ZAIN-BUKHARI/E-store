@@ -82,7 +82,6 @@ const addProducts = (admin) => {
   const submitform = async (e) =>{
     e.preventDefault()
    
-  
        
         if( slug!='' && title!='' && desc!='' && price!=''  && AvailableQty!='' && category!=''&& Profit!=''){
         const data = {slug,title,file,desc,price,size,color,AvailableQty,category,Profit,Feature}
@@ -195,6 +194,7 @@ const addProducts = (admin) => {
     
   
   }
+  let colorArry=['red','blue','black','green','yellow','tan','pink','orange']
   
     return (
       
@@ -214,8 +214,35 @@ const addProducts = (admin) => {
          
             <TextField onChange={handleChange} value={slug}  name="slug" label="Slug" variant="outlined"  />
             <TextField onChange={handleChange} value={title} name="title" label="Title" variant="outlined" />
-            <TextField onChange={handleChange} value={color} name="color" label="Color" variant="outlined" />
-            <TextField onChange={handleChange} value={size} name="size" label="Size" variant="outlined" />
+            {/* <TextField onChange={handleChange} value={color} name="color" label="Color" variant="outlined" /> */}
+            <select value={color} onChange={handleChange} name='color'   className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">
+                  <option value={''}>color</option>
+                   <option value={'blue'}>blue</option>
+                   <option value={'red'}>red</option>
+                   <option value={'black'}>black</option>
+                   <option value={'green'}>green</option>
+                  <option value={'yellow'}>yellow</option>
+                  <option value={'pink'}>pink</option>
+                  <option value={'orange'}>orange</option>
+                  <option value={'tan'}>tan</option>
+                  <option value={'white'}>white</option>
+                  <option value={'brown'}>brown</option>
+                  <option value={'maron'}>Maron</option>
+                  <option value={'purple'}>purple</option>
+                  <option value={'lpurple'}>Light purple</option>
+              </select>
+            {/* <TextField onChange={handleChange} value={size} name="size" label="Size" variant="outlined" /> */}
+            <select value={color} onChange={handleChange} name='size'  className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">
+                  <option value={''}>Size</option>
+                   <option value={'S'}>S</option>
+                   <option value={'M'}>M</option>
+                   <option value={'L'}>L</option>
+                   <option value={'XL'}>XL</option>
+                  <option value={'XXL'}>XXL</option>
+                  <option value={'A'}>Ajustable</option>
+                  <option value={'U'}>Unstitch</option>
+                  <option value={'ST'}>Standard</option>
+              </select>
             <TextField onChange={handleChange} value={price} type='number' name="price" label="Price" variant="outlined" />
             <TextField onChange={handleChange} value={AvailableQty} type='number' name="AvailableQty" label="Quantity" variant="outlined" />
             <TextField onChange={handleChange} value={category} name="category" label="Category" variant="outlined" />
