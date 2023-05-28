@@ -39,11 +39,11 @@ const Menuitems = [
   //   icon: "star",
   //   href: "/pagination",
   // },
-  // {
-  //   title: "Customization",
-  //   icon: "grid",
-  //   href: "/table",
-  // },
+  {
+    title: "Update",
+    icon: "grid",
+    href: "/update",
+  },
 ];
 
 export default Menuitems;
