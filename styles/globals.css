@@ -11,7 +11,9 @@ body{
 .videocss{
   height: 92.5vh;
   width: 100vw;
-  object-fit: cover;
+  /* object-fit: cover; */
+  background-position: center;
+  background-size: cover;
 }
 /* .main{
     height: 500px;

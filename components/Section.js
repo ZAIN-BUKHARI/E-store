@@ -6,7 +6,9 @@ const Section = () => {
   return (
     <div className='main body-font shadow-lg shadow-gray-600  '>
       {/* <div className='overlay   h-full' > </div> */}
-      <video className='videocss  ' src='back.mp4 ' autoPlay muted loop />
+      <img className='videocss   ' src='front-2.jpg'
+       //autoPlay muted loop
+        />
       <div className='content'>
         <h1 className='text-5xl' >Welcome</h1>
         <p className='text-sm' >To Zainy'sWear.</p>
