@@ -259,6 +259,7 @@ const addProducts = (admin) => {
                    <option value={'2pcs'}>2pcs suit</option>
                    <option value={'Frock'}>Frock</option>
                    <option value={'unstitch'}>Unstitch</option>
+                   <option value={'plazo'}>Plazo</option>
               </select>
             <TextField onChange={handleChange} value={desc} name="desc" label="Description" variant="outlined" multiline rows={4} /> 
             <TextField onChange={handleChange} value={Profit} name="Profit" type='number' label="Profit" variant="outlined"  />

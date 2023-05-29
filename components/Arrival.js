@@ -28,10 +28,10 @@ display: flex;
 align-items: center;
 justify-content: center;
 border-radius: 10px;
-// img{
-//   max-width: 100px;
-//   max-height: 80px;
-// }
+img{
+  max-width: 200px;
+  max-height: 180px;
+}
 `;
 
 const TitleTWO = styled.div`
