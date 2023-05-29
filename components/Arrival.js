@@ -32,6 +32,10 @@ img{
   max-width: 200px;
   max-height: 180px;
 }
+@media (max-width: 768px) {
+  max-width: 100px;
+  max-height: 80px;
+}
 `;
 
 const TitleTWO = styled.div`
