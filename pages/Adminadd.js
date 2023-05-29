@@ -233,6 +233,10 @@ const addProducts = (admin) => {
                   <option value={'lpurple'}>Light purple</option>
                   <option value={'gray'}>Gray</option>
                   <option value={'dgreen'}>Dark green</option>
+                  <option value={'lyellow'}>light yellow</option>
+                  <option value={'rose'}>Rose</option>
+                  <option value={'lpink'}>Light pink</option>
+                  <option value={'dblue'}>Dark blue</option>
               </select>
             {/* <TextField onChange={handleChange} value={size} name="size" label="Size" variant="outlined" /> */}
             <select value={size} onChange={handleChange} name='size'  className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">

@@ -8,8 +8,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Error from 'next/error'
 import Link from 'next/link'
+import Image from 'next/image'
 import Wear from '../../components/Wear'
-
 
 
 
@@ -41,7 +41,7 @@ useEffect(()=>{
 // ONCHNAGE FUNTION
 const select =(COLOR,SIZE)=>{
   
-  let url =`/product/${variants[COLOR][SIZE]['slug']}`
+  let url =`${process.env.NEXT_PUBLIC_HOST}/product/${variants[COLOR][SIZE]['slug']}`
   router.push(url)
 
 }
@@ -115,20 +115,29 @@ const select =(COLOR,SIZE)=>{
         <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
           <div className="flex">
             <span className="mr-3">Color</span>
-            {Object.keys(variants).includes('red') && Object.keys(variants['red']).includes(Size) && <button onClick={()=>{select('red',Size)}} className={`border-2 ${Color==='red'?'border-black':'border-gray-300'} rounded-full bg-red-500 w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('black') && Object.keys(variants['black']).includes(Size) && <button onClick={()=>{select('black',Size)}} className={`border-2 ${Color==='black'?'border-black':'border-gray-300'} ml-1 bg-black rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('blue') && Object.keys(variants['blue']).includes(Size) && <button onClick={()=>{select('blue',Size)}} className={`border-2 ${Color==='blue'?'border-black':'border-gray-300'} ml-1 bg-blue-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('pink') && Object.keys(variants['pink']).includes(Size) && <button onClick={()=>{select('pink',Size)}} className={`border-2 ${Color==='pink'?'border-black':'border-gray-300'} ml-1 bg-pink-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
-            {Object.keys(variants).includes('green') && Object.keys(variants['green']).includes(Size) && <button onClick={()=>{select('green',Size)}} className={`border-2 ${Color==='green'?'border-black':'border-gray-300'} ml-1 bg-green-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
-            {Object.keys(variants).includes('tan') && Object.keys(variants['tan']).includes(Size) && <button onClick={()=>{select('tan',Size)}} className={`border-2 ${Color==='tan'?'border-black':'border-gray-300'} ml-1 bg-amber-600 rounded-full w-6 h-6 focus:outline-none`}></button>}
-            {Object.keys(variants).includes('brown') && Object.keys(variants['brown']).includes(Size) && <button onClick={()=>{select('brown',Size)}} className={`border-2 ${Color==='brown'?'border-black':'border-gray-300'} ml-1 bg-yellow-300 rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('yellow') && Object.keys(variants['yellow']).includes(Size) && <button onClick={()=>{select('yellow',Size)}} className={`border-2 ${Color==='yellow'?'border-black':'border-gray-300'} ml-1 bg-amber-600 rounded-full w-6 h-6 focus:outline-none`}></button>}
-            {Object.keys(variants).includes('purple') && Object.keys(variants['purple']).includes(Size) && <button onClick={()=>{select('purple',Size)}} className={`border-2 ${Color==='purple'?'border-black':'border-gray-300'} ml-1 bg-purple-800 rounded-full w-6 h-6 focus:outline-none`}></button>}
-            {Object.keys(variants).includes('lpurple') && Object.keys(variants['lpurple']).includes(Size) && <button onClick={()=>{select('lpurple',Size)}} className={`border-2 ${Color==='lpurple'?'border-black':'border-gray-300'} ml-1 bg-purple-400 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('brown') && Object.keys(variants['brown']).includes(Size) && <button onClick={()=>{select('brown',Size)}} className={`border-2 ${Color==='brown'?'border-black':'border-gray-300'} ml-1 bg-yellow-300 rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('white') && Object.keys(variants['white']).includes(Size) && <button onClick={()=>{select('white',Size)}} className={`border-2 ${Color==='white'?'border-black':'border-gray-300'} ml-1 bg-white rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('orange') && Object.keys(variants['orange']).includes(Size) && <button onClick={()=>{select('orange',Size)}} className={`border-2 ${Color==='orange'?'border-black':'border-gray-300'} ml-1 bg-orange-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('green') && Object.keys(variants['green']).includes(Size) && <button onClick={()=>{select('green',Size)}} className={`border-2 ${Color==='green'?'border-black':'border-gray-300'} ml-1 bg-green-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('dgreen') && Object.keys(variants['dgreen']).includes(Size) && <button onClick={()=>{select('dgreen',Size)}} className={`border-2 ${Color==='dgreen'?'border-black':'border-gray-300'} ml-1 bg-green-700 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('purple') && Object.keys(variants['purple']).includes(Size) && <button onClick={()=>{select('purple',Size)}} className={`border-2 ${Color==='purple'?'border-black':'border-gray-300'} ml-1 bg-purple-800 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('maron') && Object.keys(variants['maron']).includes(Size) && <button onClick={()=>{select('maron',Size)}} className={`border-2 ${Color==='maron'?'border-black':'border-gray-300'} ml-1 bg-red-800 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('silver') && Object.keys(variants['silver']).includes(Size) && <button onClick={()=>{select('silver',Size)}} className={`border-2 ${Color==='silver'?'border-black':'border-gray-300'} ml-1 bg-white rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('lpurple') && Object.keys(variants['lpurple']).includes(Size) && <button onClick={()=>{select('lpurple',Size)}} className={`border-2 ${Color==='lpurple'?'border-black':'border-gray-300'} ml-1 bg-purple-400 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('purple') && Object.keys(variants['purple']).includes(Size) && <button onClick={()=>{select('purple',Size)}} className={`border-2 ${Color==='purple'?'border-black':'border-gray-300'} ml-1 bg-purple-800 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('red') && Object.keys(variants['red']).includes(Size) && <button onClick={()=>{select('red',Size)}} className={`border-2 ${Color==='red'?'border-black':'border-gray-300'} rounded-full bg-red-500 w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('tan') && Object.keys(variants['tan']).includes(Size) && <button onClick={()=>{select('tan',Size)}} className={`border-2 ${Color==='tan'?'border-black':'border-gray-300'} ml-1 bg-amber-600 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('lyellow') && Object.keys(variants['lyellow']).includes(Size) && <button onClick={()=>{select('lyellow',Size)}} className={`border-2 ${Color==='lyellow'?'border-black':'border-gray-300'} ml-1 bg-yellow-300 rounded-full w-6 h-6 focus:outline-none`}></button>}
             {Object.keys(variants).includes('gray') && Object.keys(variants['gray']).includes(Size) && <button onClick={()=>{select('gray',Size)}} className={`border-2 ${Color==='gray'?'border-black':'border-gray-300'} ml-1 bg-gray-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
-            {Object.keys(variants).includes('dgreen') && Object.keys(variants['dgreen']).includes(Size) && <button onClick={()=>{select('dgreen',Size)}} className={`border-2 ${Color==='dgreen'?'border-black':'border-gray-300'} ml-1 bg-green-800 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('rose') && Object.keys(variants['rose']).includes(Size) && <button onClick={()=>{select('rose',Size)}} className={`border-2 ${Color==='rose'?'border-black':'border-gray-300'} ml-1 bg-rose-400 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('lpink') && Object.keys(variants['lpink']).includes(Size) && <button onClick={()=>{select('lpink',Size)}} className={`border-2 ${Color==='lpink'?'border-black':'border-gray-300'} ml-1 bg-pink-400 rounded-full w-6 h-6 focus:outline-none`}></button>}
+            {Object.keys(variants).includes('dblue') && Object.keys(variants['dblue']).includes(Size) && <button onClick={()=>{select('dblue',Size)}} className={`border-2 ${Color==='dblue'?'border-black':'border-gray-300'} ml-1 bg-blue-800 rounded-full w-6 h-6 focus:outline-none`}></button>}
           </div>
+          
           <div className="flex ml-6 items-center">
             <span className="mr-3">Size</span>
             <div className="relative">

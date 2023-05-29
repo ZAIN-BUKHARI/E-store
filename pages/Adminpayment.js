@@ -10,7 +10,7 @@ import Link from 'next/link';
 import axios from 'axios';
 
 
-const orders = (admin) => {
+const Adminpayment = (admin) => {
   const orders=admin.order
   const [Marked,setMarked]=useState(false)
   const [Pay,setPay]=useState(false)
@@ -63,7 +63,7 @@ const orders = (admin) => {
   <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div className="overflow-hidden">
-            <h1 className='font-bold text-3xl p-8 text-pink-500 text-center' >My Orders History</h1>
+            <h1 className='font-bold text-3xl p-8 text-pink-500 text-center' >Complet Order Payment History</h1>
         <table className="min-w-full">
           <thead className="border-b">
             <tr className='border-pink-300 border-b'  >
@@ -97,9 +97,9 @@ const orders = (admin) => {
               <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                 Mark
               </th>
-              {/* <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                 Payment 
-              </th> */}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -129,9 +129,9 @@ const orders = (admin) => {
               <td className="text-sm font-medium text-gray-900 px-6 py-4 whitespace-nowrap">
                   <button onClick={()=>{status(orders[items]._id)}} className={`text-black bg-white border-2 p-2 rounded-full ${orders[items].status=='done'?'bg-green-500 ':'border-red-300'}`} >Mark</button>
               </td>
-              {/* <td className="text-sm font-medium text-gray-900 px-6 py-4 whitespace-nowrap">
+              <td className="text-sm font-medium text-gray-900 px-6 py-4 whitespace-nowrap">
               <button onClick={()=>{pay(orders[items]._id)}} className={`text-black bg-white border-2 p-2 rounded-full ${orders[items].payment=='done'?'bg-green-500 ':'border-red-300'}`} >Mark</button>
-              </td> */}
+              </td>
             </tr  >
             })}
            
@@ -156,7 +156,7 @@ export async function getServerSideProps(context) {
   if(!mongoose.connections[0].readyState){
     await mongoose.connect(process.env.MONGO_URI)
   }
-  let order = await Order.find({status:'pending'})
+  let order = await Order.find({payment:'done'})
   
     
     
@@ -170,5 +170,5 @@ export async function getServerSideProps(context) {
 }
 
 
-export default orders
+export default Adminpayment
 

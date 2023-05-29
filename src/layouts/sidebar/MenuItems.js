@@ -29,16 +29,16 @@ const Menuitems = [
     icon: "star",
     href: "/Admincustom",
   },
-  // {
-  //   title: "Images",
-  //   icon: "image",
-  //   href: "/image",
-  // },
-  // {
-  //   title: "Pagination",
-  //   icon: "star",
-  //   href: "/pagination",
-  // },
+  {
+    title: "Payment",
+    icon: "image",
+    href: "/Adminpayment",
+  },
+  {
+    title: "Mark order",
+    icon: "star",
+    href: "/Adminmark",
+  },
   {
     title: "Update",
     icon: "grid",

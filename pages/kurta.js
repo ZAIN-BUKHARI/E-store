@@ -60,11 +60,15 @@ const kurta = ({products}) => {
             {products[P].color.includes('purple')  && <button className="border-2 border-gray-300 ml-1 bg-purle-500 rounded-full w-6 h-6 focus:outline-none"></button>}
             {products[P].color.includes('maron')  && <button className="border-2 border-gray-300 ml-1 bg-red-800 rounded-full w-6 h-6 focus:outline-none"></button>}
             {products[P].color.includes('silver')  && <button className="border-2 border-gray-300 ml-1 bg-white rounded-full w-6 h-6 focus:outline-none"></button>}
-            {products[P].color.includes('tan')  && <button className="border-2 border-gray-300 ml-1 bg-amber-700  rounded-full w-6 h-6 focus:outline-none"></button>}
             {products[P].color.includes('purple')  && <button className="border-2 border-gray-300 ml-1 bg-purple-800 rounded-full w-6 h-6 focus:outline-none"></button>}
             {products[P].color.includes('lpurple')  && <button className="border-2 border-gray-300 ml-1 bg-purple-400 rounded-full w-6 h-6 focus:outline-none"></button>}
             {products[P].color.includes('gray')  && <button className="border-2 border-gray-300 ml-1 bg-gray-500 rounded-full w-6 h-6 focus:outline-none"></button>}
             {products[P].color.includes('dgreen')  && <button className="border-2 border-gray-300 ml-1 bg-green-800 rounded-full w-6 h-6 focus:outline-none"></button>}
+            {products[P].color.includes('tan')  && <button className="border-2 border-gray-300 ml-1 bg-amber-600 rounded-full w-6 h-6 focus:outline-none"></button>}
+            {products[P].color.includes('lyellow')  && <button className="border-2 border-gray-300 ml-1 bg-yellow-400 rounded-full w-6 h-6 focus:outline-none"></button>}
+            {products[P].color.includes('rose')  && <button className="border-2 border-gray-300 ml-1 bg-rose-400 rounded-full w-6 h-6 focus:outline-none"></button>}
+            {products[P].color.includes('lpink')  && <button className="border-2 border-gray-300 ml-1 bg-pink-400 rounded-full w-6 h-6 focus:outline-none"></button>}
+            {products[P].color.includes('dblue')  && <button className="border-2 border-gray-300 ml-1 bg-blue-800 rounded-full w-6 h-6 focus:outline-none"></button>}
 
              </div> 
           </div>
