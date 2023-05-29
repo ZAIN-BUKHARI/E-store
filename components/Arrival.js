@@ -29,8 +29,8 @@ align-items: center;
 justify-content: center;
 border-radius: 10px;
 img{
-  max-width: 200px;
-  max-height: 180px;
+  max-width: 140px;
+  max-height: 140px;
 }
 @media (max-width: 768px) {
   max-width: 180px;
