@@ -1,19 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import mongoose from 'mongoose'
 import Product from '../models/Product'
 import Image from 'next/image'
 import { useState } from 'react'
-import { useRouter } from 'next/router'
 
 const Tshirts = ({products}) => {
-  console.log(products)
-  const [Searchbar, setsearch] = useState('')
-  const router=useRouter()
-  
-  
- const path=router.query.page
- const Nextpage= parseInt((router.query.page)+1)
+
  
   
   return (
@@ -97,7 +90,7 @@ export async function getServerSideProps(context) {
     if(!page) page=1;
     if(!limit) limit=10;
     const skip= (page-1)*2;
-  let products = await Product.find({ category : '3pcs'})
+  let products = await Product.find({ category : context.query.category})
   products.reverse()
   let Tshirts={}
   for(let item of products){

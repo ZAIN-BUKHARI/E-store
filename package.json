@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "rimraf node_modules/.cache && next build && next export && touch out/.nojekyll && gh-pages -d out"
+    "lint": "next lint", 
+    "export":"next export"
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
