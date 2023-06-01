@@ -33,7 +33,7 @@ const MYOrder = (order) => {
   <div className="container px-5 py-24 mx-auto">
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
       <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-        <h2 className="text-sm title-font text-gray-500 tracking-widest">Zainy'sWear</h2>
+        <h2 className="text-sm title-font text-gray-500 tracking-widest">z-wear</h2>
         <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">Order Id#{order.order.OrderId}</h1>
         <div className="flex mb-4">
           <a className="flex-grow border-b-2   py-2 text-lg px-1">Item description</a>

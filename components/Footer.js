@@ -10,13 +10,13 @@ const Footer = () => {
       <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
         <Link href={'/'}  className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
       
-          <Image src="/l3.png" width={100} height={50} alt='zainyswear' className="w-26 h-20 text-white p-2  rounded-full" >
-          </Image> 
+          <img src="/zwearlogo.png" width={120} height={50} alt='zainyswear' className="w-26 h-20 text-white p-2  rounded-full" >
+          </img> 
         
-          <span className=" hover:text-pink-500 ml-1 text-xl">Zainy's Wear</span>
+          <span className=" hover:text-pink-500 ml-1 text-xl text-red-500">z-wear</span>
         </Link>
-        <p className="mt-2 text-sm text-gray-500">If you are a true programmer then you need to wear the code alway ! Order now your code from Zainy'sWear</p>
-        <p className="mt-2 text-sm text-pink-500">&lt;Wear-The-Code&gt;</p>
+        <p className="mt-2 text-sm text-gray-500">If you are a true programmer then you need to wear the code alway ! Order now your code from z-wear</p>
+        <p className="mt-2 text-sm text-red-500">&lt;Why-not-wear-anything-special&gt;</p>
       </div>
       <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
         <div className="lg:w-1/4 md:w-1/2 md:mx-0 mx-36 w-fullmx-10 px-4">
@@ -67,7 +67,7 @@ const Footer = () => {
     </div>
     <div className="bg-gray-100 border-t-2 border-gray-300 ">
       <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-        <p className="text-gray-500 text-sm text-center sm:text-left">© 2022 Zainy'sWear.com — All Rights Reserved
+        <p className="text-gray-500 text-sm text-center sm:text-left">© 2022 z-wear.com — All Rights Reserved
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
           <Link href={'/'}  className="text-gray-500">

@@ -11,7 +11,7 @@ const Section = () => {
         />
       <div className='content'>
         <h1 className='text-5xl' >Welcome</h1>
-        <p className='text-sm' >To Zainy'sWear.</p>
+        <p className='text-sm' >To z-wear.store</p>
       </div>
      
     </div>

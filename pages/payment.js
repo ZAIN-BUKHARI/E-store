@@ -118,7 +118,7 @@ const payment = ({cart,subTotal,clearCart}) => {
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </button>
-          <p className="text-xs text-gray-500 mt-3">Zainy'sWear</p>
+          <p className="text-xs text-gray-500 mt-3">z-wear</p>
         </div>
       </div>
       {/* bank  */}
@@ -145,7 +145,7 @@ const payment = ({cart,subTotal,clearCart}) => {
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </button>
-          <p class="text-xs text-gray-500 mt-3">Zainy'sWear</p>
+          <p class="text-xs text-gray-500 mt-3">z-wear</p>
         </div>
       </div>
       {/* jazzcash  */}
@@ -172,7 +172,7 @@ const payment = ({cart,subTotal,clearCart}) => {
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </button>
-          <p class="text-xs text-gray-500 mt-3">Zainy'sWear</p>
+          <p class="text-xs text-gray-500 mt-3">z-wear</p>
         </div>
       </div>
 
@@ -200,7 +200,7 @@ const payment = ({cart,subTotal,clearCart}) => {
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </button>
-          <p class="text-xs text-gray-500 mt-3">Zainy'sWear</p>
+          <p class="text-xs text-gray-500 mt-3">z-wear</p>
         </div>
       </div>
 

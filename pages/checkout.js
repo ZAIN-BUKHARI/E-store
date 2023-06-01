@@ -394,7 +394,7 @@ export default Checkout
   
 //         <button onClick={selectionColor} disabled={cash}  className='disabled:border-pink-500  text-3xl py-10 mb-8 border-2 border-rounded rounded-2xl'>Cash on Delivery</button>
 //          <Link href={`#`}><button   disabled={disabled2} onClick={submitForm} method='POST'   className={`text-white  disabled:bg-pink-300  bg-pink-500 md:mt-20 mt-5 border-0 py-2 px-6  focus:outline-none  ${cash==false?disabled2:''} hover:bg-pink-600 rounded text-lg`}>Proceed</button></Link>
-//         <p className="text-xs text-gray-500 mt-3">www.Zainy'sWear.com !  enjoy your shopping.</p>
+//         <p className="text-xs text-gray-500 mt-3">www.z-wear.com !  enjoy your shopping.</p>
 //       </div>
 //      </div>
 //      </div>
