@@ -146,7 +146,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
         {/* <ul className="   font-bold flex cursor-pointer   items-center md:text-md "> */}
         <Media className=" space-x-6 md:space-x-10   font-bold flex    items-center  ">
           
-            <Link href={`/Tshirts`}><li className="flex hover:text-gray-600  " 
+            <Link href={`/Tshirts?category=3pcs`}><li className="flex hover:text-gray-600  " 
             // onClick={onMouseli1O}
             >
             3pcs 
@@ -178,7 +178,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             
           
           
-            <Link href={'/two'}><li className="flex cursor-pointer  hover:text-gray-600" 
+            <Link href={'/Tshirts?category=2pcs'}><li className="flex cursor-pointer  hover:text-gray-600" 
             // onClick={onMouseli2O}
             >
             2pcs
@@ -210,7 +210,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             </li></Link>
         
           
-            <Link href={'/bag'} ><li className="flex cursor-pointer  hover:text-gray-600" 
+            <Link href={'/Tshirts?category=Frock'} ><li className="flex cursor-pointer  hover:text-gray-600" 
             // onClick={onMouseli3O}
             >
               Bags
@@ -228,7 +228,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             </li></Link>
           
           
-            <Link href={'/unstitch'}><li className="flex hover:text-gray-600" 
+            <Link href={'/Tshirts?category=unstitch'}><li className="flex hover:text-gray-600" 
             // onClick={onMouseli4O}
             >
               Unstitch
@@ -244,7 +244,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
                 </ul>}
               </span> */}
             </li></Link>
-            <Link href={'/plazo'}><li className="flex hover:text-gray-600" 
+            <Link href={'/Tshirts?category=plazo'}><li className="flex hover:text-gray-600" 
             // onClick={onMouseli4O}
             >
               Plazo

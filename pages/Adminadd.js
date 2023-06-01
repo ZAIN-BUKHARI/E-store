@@ -195,7 +195,26 @@ const addProducts = (admin) => {
     
   
   }
-  let colorArry=['red','blue','black','green','yellow','tan','pink','orange']
+  const [cloudfile,setCloudfile]=useState('');
+   const [url,seturl]=useState('');
+  const cloudinaryonChange=(e)=>{
+    if(e.target.name=='cloud'){
+      setCloudfile(e.target.files[0])
+      console.log(e.target.files[0])
+    }
+  }
+
+  const cloud=()=>{
+    const data= new FormData()
+    data.append('file',cloudfile)
+    data.append('upload_preset','vru3vgic')
+    data.append('cloud_name','dklqbx5k0')
+    const url='https://api.cloudinary.com/v1_1/dklqbx5k0/image/upload'
+    axios.post(url,data).then(res=>{
+      console.log(res)
+      seturl(res.data.secure_url)
+    })
+  }
   
     return (
       
@@ -297,6 +316,16 @@ const addProducts = (admin) => {
 
      
     </Grid>}
+    <h1 className='text-3xl text-pink-500 font-bold my-5 '>IMAGE FILE TO URL</h1>
+    <Grid>
+  <BaseCard>
+  <div className='flex flex-col'>
+    <TextField onChange={cloudinaryonChange}  name="cloud" type='file' label="" variant="outlined"  />
+    <Button onClick={cloud} variant="outlined" mt={2}>Upload</Button>
+    </div>
+    {url && <div>{url}</div>}
+    </BaseCard>
+      </Grid>
   
         </FullLayout>
         </ThemeProvider>
