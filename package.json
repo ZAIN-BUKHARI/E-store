@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "babel src -d lib",
+    "test": "jest",
     "start": "next start",
-    "lint": "next lint", 
-    "export":"next export"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
