@@ -26,8 +26,7 @@ const slug = ({buyNow,AddToCart,user}) => {
   axios.post('/api/serverside/slug',data).then(res=>{
     console.log(res.data)
     serproduct(res.data.product)
-    setvarians(res.data.ColorSizeSlug
-      )
+    setvarians(res.data.ColorSizeSlug)
 
   })
   },[])
