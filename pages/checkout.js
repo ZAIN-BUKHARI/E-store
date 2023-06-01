@@ -36,6 +36,7 @@ const Box = styled.div`
   padding: 0 0 30px;
   // padding:30px
   
+  
 `;
 
 const ProductInfoCell = styled.td`
