@@ -59,7 +59,7 @@ const MYOrder = (order) => {
          
         </div>
       </div>
-      <Image src="/x.png" priority pr='true' alt="zainyswear order page" width={500} height={500} className="lg:w-1/2 w-full text-pink-400 lg:h-auto h-64 object-cover object-center rounded" />
+      <img src="backzwear.png" priority pr='true' alt="zainyswear order page" width={500} height={500} className="lg:w-1/2 w-full text-pink-400 lg:h-auto h-64 object-cover object-center rounded" />
     </div>
   </div>
 </section>
