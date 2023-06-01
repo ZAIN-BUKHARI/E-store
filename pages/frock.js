@@ -6,13 +6,14 @@ import Image from 'next/image'
 import { useState } from 'react'
 import axios from 'axios'
 
-const Tshirts = () => {
+const frock = () => {
   const [products,setproducts]=useState([])
-  const [query,setquery]=useState('3pcs')
+  const [query,setquery]=useState('frock')
   
   useEffect(()=>{
     const data={query}
     axios.post('/api/serverside/tshirt',data).then(res=>{
+      console.log(res.data)
       setproducts(res.data)
     })
   },[])
@@ -135,4 +136,4 @@ const Tshirts = () => {
 //   }
 // }
 
-export default Tshirts
+export default frock
