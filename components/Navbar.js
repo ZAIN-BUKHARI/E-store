@@ -124,8 +124,8 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
     }
   };
   return (
-    <div  className=" py-2 shadow-gray-600 md:h-11 h-[100px] bg-white shadow-md sticky z-10 top-0 flex md:justify-start  md:text-xl md:flex-row flex-col items-center justify-between">
-      <div className="logo mx-5   ">
+    <div  className=" py-2 shadow-gray-600 md:h-[70px] h-[100px] bg-white shadow-md sticky z-10 top-0 flex md:justify-start  md:text-xl md:flex-row flex-col items-center justify-between">
+      <div className="logo mx-5  ">
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -265,7 +265,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
         </Media>
       </div>
 
-      <div className="cart absolute right-0 top-2 items-center mx-5 flex my-1 ">
+      <div className="cart absolute right-0 top-2 items-center mx-5 flex my-3 ">
         { drop.value == true && <div  onMouseLeave={onMouseLeave} className="absolute right-8 bg-white   top-10 rounded-md px-5 w-36 ">
           <ul>
             
