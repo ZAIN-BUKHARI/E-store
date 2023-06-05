@@ -143,7 +143,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
         
         {/* <img src='zwearlogo.png' width={50} height={50} /> */}
       </div>
-      <div className="nav font-serif ">
+      <div className="nav font-serif text-bg-black  ">
         {/* <ul className="   font-bold flex cursor-pointer   items-center md:text-md "> */}
         <Media className=" space-x-6 md:space-x-10   font-bold flex    items-center  ">
           
