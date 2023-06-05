@@ -7,37 +7,37 @@ const Menuitems = [
   {
     title: "Add Products",
     icon: "plus-circle",
-    href: "/Adminadd",
+    href: "/adminadd",
   },
   {
     title: "View Products",
     icon: "eye",
-    href: "/Adminproducts",
+    href: "/adminproducts",
   },
   {
     title: "Orders",
     icon: "box",
-    href: "/Adminorders",
+    href: "/adminorders",
   },
   {
     title: "Sales",
     icon: "user",
-    href: "/Adminsales",
+    href: "/adminsales",
   },
   {
     title: "Search",
     icon: "star",
-    href: "/Admincustom",
+    href: "/admincustom",
   },
   {
     title: "Payment",
     icon: "image",
-    href: "/Adminpayment",
+    href: "/adminpayment",
   },
   {
     title: "Mark order",
     icon: "star",
-    href: "/Adminmark",
+    href: "/adminmark",
   },
   {
     title: "Update",
