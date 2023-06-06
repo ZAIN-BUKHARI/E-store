@@ -62,7 +62,7 @@ const login = () => {
         theme: "light",
         });
       },100)
-      router.push(`/Admin`)
+      router.push(`/admin`)
 
     }else{
       toast.error('Invalid Credentials', {
