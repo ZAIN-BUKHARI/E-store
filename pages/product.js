@@ -4,24 +4,14 @@ import mongoose from 'mongoose'
 import Product from '../models/Product'
 import Image from 'next/image'
 import { useState } from 'react'
-import axios from 'axios'
-
-const bag = () => {
-  const [products,setproducts]=useState([])
-  const [query,setquery]=useState('Frock')
-  
-  useEffect(()=>{
-    const data={query}
-    axios.post('/api/serverside/tshirt',data).then(res=>{
-      console.log(res.data)
-      setproducts(res.data)
-    })
-  },[])
+import Header from '../components/Header'
+const product = ({products}) => {
 
  
   
   return (
     <>
+    <Header title={'zwear - Products'} />
    
     <div>
         <section className="text-gray-600 body-font ">
@@ -36,7 +26,8 @@ const bag = () => {
             
           </div>
           <div className="mt-4 text-center">
-            <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
+            {products[P].category!='Frock' && <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{products[P].category}</h3>}
+            {products[P].category=='Frock' && <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Bags</h3>}
             <h2 className="text-gray-900 title-font text-lg font-medium">{products[P].title}</h2>
             <p className="mt-1">Rs{products[P].price}</p>
             <div className="mt-1">
@@ -92,48 +83,48 @@ const bag = () => {
   </>
   )
 }
-// export async function getServerSideProps(context) {
-//   if(!mongoose.connections[0].readyState){
-//     await mongoose.connect(process.env.MONGO_URI)
+export async function getServerSideProps(context) {
+  if(!mongoose.connections[0].readyState){
+    await mongoose.connect(process.env.MONGO_URI)
     
-//   }
-//   let {page,limit}=context.query;
-//     if(!page) page=1;
-//     if(!limit) limit=10;
-//     const skip= (page-1)*2;
-//   let products = await Product.find({ category : context.query.category})
-//   products.reverse()
-//   let Tshirts={}
-//   for(let item of products){
-//     if(item.title in Tshirts){
-//       if(!Tshirts[item.title].color.includes(item.color) && item.AvailableQty>0){
-//         Tshirts[item.title].color.push(item.color)
+  }
+  let {page,limit}=context.query;
+    if(!page) page=1;
+    if(!limit) limit=10;
+    const skip= (page-1)*2;
+  let products = await Product.find({ category : context.query.category})
+  products.reverse()
+  let Tshirts={}
+  for(let item of products){
+    if(item.title in Tshirts){
+      if(!Tshirts[item.title].color.includes(item.color) && item.AvailableQty>0){
+        Tshirts[item.title].color.push(item.color)
         
-//       }
-//       if(!Tshirts[item.title].size.includes(item.size) && item.AvailableQty>0){
-//         Tshirts[item.title].size.push(item.size)
+      }
+      if(!Tshirts[item.title].size.includes(item.size) && item.AvailableQty>0){
+        Tshirts[item.title].size.push(item.size)
         
-//       }
+      }
 
-//     }
-//     else{
-//       Tshirts[item.title]=JSON.parse(JSON.stringify(item))
-//       if(item.AvailableQty>0){
-//         Tshirts[item.title].color =[item.color]
-//         Tshirts[item.title].size =[item.size]
-//       }
-//       else{
-//         Tshirts[item.title].color =[]
-//         Tshirts[item.title].size =[]
-//       }
+    }
+    else{
+      Tshirts[item.title]=JSON.parse(JSON.stringify(item))
+      if(item.AvailableQty>0){
+        Tshirts[item.title].color =[item.color]
+        Tshirts[item.title].size =[item.size]
+      }
+      else{
+        Tshirts[item.title].color =[]
+        Tshirts[item.title].size =[]
+      }
 
-//     }
-//   }
+    }
+  }
         
   
-//   return {
-//     props: {products:JSON.parse(JSON.stringify(Tshirts))}, // will be passed to the page component as props
-//   }
-// }
+  return {
+    props: {products:JSON.parse(JSON.stringify(Tshirts))}, // will be passed to the page component as props
+  }
+}
 
-export default bag
+export default product

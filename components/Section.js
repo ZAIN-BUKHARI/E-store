@@ -10,8 +10,8 @@ const Section = () => {
        //autoPlay muted loop
         />
       <div className='content'>
-        <h1 className='text-5xl' >Welcome</h1>
-        <p className='text-sm font-serif' >To zwear.store</p>
+        {/* <h1 className='text-5xl' >Welcome</h1>
+        <p className='text-sm font-serif' >To zwear.store</p> */}
       </div>
      
     </div>

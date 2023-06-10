@@ -148,14 +148,14 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
         {/* <ul className="   font-bold flex cursor-pointer   items-center md:text-md "> */}
         <Media className=" space-x-6 md:space-x-10   font-bold flex    items-center  ">
           
-            <Link href={`/Tshirts?category=3pcs`}><li className="flex hover:text-gray-600  " 
+            <Link href={`/product?category=3pcs`}><li className="flex hover:text-gray-600  " 
             // onClick={onMouseli1O}
             >
             3pcs 
             {/* <FaArrowDown className="my-2  mx-2 font-bold text-[15px] hover:text-white " /> */}
               {/* <span className="cart absolute left-[90px] md:left-[35px] top-2 items-center rounded-md mx-5 flex my-8 md:my-1  ">
               { drop1st.value == true &&   <ul   onMouseLeave={onMouseli1L} onClick={onMouseli1L} className="absolute   bg-pink-300   top-14 rounded-md px-12 md:px-5 w-40 md:w-28 " >
-             <Link href={'/Tshirts'}>  <li className="py-2 hover:text-white    text-black hover:p-2 cursor-pointer font-bold text-sm">Tshirts</li></Link> 
+             <Link href={'/product'}>  <li className="py-2 hover:text-white    text-black hover:p-2 cursor-pointer font-bold text-sm">product</li></Link> 
              <hr/>
              <Link href={'#'}> <li className="py-2 hover:text-white text-black hover:p-2  cursor-pointer font-bold text-sm">Shirts</li></Link>
              <hr/>
@@ -180,7 +180,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             
           
           
-            <Link href={'/Tshirts?category=2pcs'}><li className="flex cursor-pointer  hover:text-gray-600" 
+            <Link href={'/product?category=2pcs'}><li className="flex cursor-pointer  hover:text-gray-600" 
             // onClick={onMouseli2O}
             >
             2pcs
@@ -212,7 +212,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             </li></Link>
         
           
-            <Link href={'/Tshirts?category=Frock'} ><li className="flex cursor-pointer  hover:text-gray-600" 
+            <Link href={'/product?category=Frock'} ><li className="flex cursor-pointer  hover:text-gray-600" 
             // onClick={onMouseli3O}
             >
               Bags
@@ -230,7 +230,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             </li></Link>
           
           
-            <Link href={'/Tshirts?category=unstitch'}><li className="flex hover:text-gray-600" 
+            <Link href={'/product?category=unstitch'}><li className="flex hover:text-gray-600" 
             // onClick={onMouseli4O}
             >
               Unstitch
@@ -246,7 +246,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
                 </ul>}
               </span> */}
             </li></Link>
-            <Link href={'/Tshirts?category=plazo'}><li className="flex hover:text-gray-600" 
+            <Link href={'/product?category=plazo'}><li className="flex hover:text-gray-600" 
             // onClick={onMouseli4O}
             >
               Plazo
@@ -305,7 +305,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
             return (
               <>
               <li key={K}>
-                <div className="flex my-5">
+                <div className="flex my-5 font-serif">
                   
                   
                  {cart[K].size && cart[K].variant && <div className="w-2/3 pt-3 font-normal"  >{cart[K].name.slice(0,12)}({cart[K].size}/{Capital(cart[K].variant)})</div>}
@@ -348,7 +348,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
                     />
                   </div>
                   
-              <span  ><img className="h-10 mt-2 w-10"  src={cart[K].image} alt="hello" /></span>
+              <span  ><img className="h-10 mt-2 w-10"  src={cart[K].image} alt="zwear" /></span>
                 </div>
               </li>
               <div className='bg-white h-[1px] flex flex-col w-50'></div>

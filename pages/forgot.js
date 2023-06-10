@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link'
-
+import Header from '../components/Header'
 
 const forgot = () => {
 
@@ -88,14 +88,7 @@ const Emailsend = async (e)=>{
   return (
     
     <>
-    <style jsx global>{`
-     navbar{
-      display:none;
-    }
-footer{
-display:none;
- }
-`}</style>
+    <Header title={'zwear - Forgot'} />
 <div className='topper'>
     <div className='box'>
       <span className='borderLine'></span>

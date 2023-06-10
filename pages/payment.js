@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify';
+import Header from '../components/Header'
 const payment = ({cart,subTotal,clearCart}) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -79,6 +80,7 @@ const payment = ({cart,subTotal,clearCart}) => {
 
   return (
     <>
+    <Header title={'zwear - Payment'} />
     <section className="text-gray-600 body-font overflow-hidden">
   <div className="container px-5 py-12 mx-auto">
 

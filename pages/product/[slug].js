@@ -4,13 +4,13 @@ import { useEffect } from 'react'
 import mongoose from 'mongoose'
 import Product from '../../models/Product'
 import React from 'react'
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Error from 'next/error'
 import Link from 'next/link'
 import Image from 'next/image'
 import Wear from '../../components/Wear'
-
+import Header from '../../components/Header'
 
 
 
@@ -38,6 +38,21 @@ useEffect(()=>{
 
 },[router.query])
 
+useEffect(()=>{
+  if(!user.value){
+    toast.info('Please login before checkout', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
+},[])
+
 // ONCHNAGE FUNTION
 const select =(COLOR,SIZE)=>{
   
@@ -62,7 +77,8 @@ const select =(COLOR,SIZE)=>{
   
   return (
     <>
-   <ToastContainer />
+    <Header title={`zwear - ${product.title}`} />
+   {/* <ToastContainer /> */}
     
     
     <section className="text-gray-600 body-font overflow-hidden">
@@ -74,7 +90,7 @@ const select =(COLOR,SIZE)=>{
       {/* <Image alt="ecommerce" className="lg:w-1/2 w-full h-[500px] object-cover object-center rounded" src={product.image}/> */}
       <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
         <h2 className="text-sm title-font text-gray-500 tracking-widest">zwear.store</h2>
-        <h1 className={`text-gray-900  text-3xl title-font font-medium mb-1`}>{product.title}({product.size}/{Capital(product.color)})</h1>
+        <h1 className={`text-gray-900  font-serif text-3xl title-font font-medium mb-1`}>{product.title}({product.size}/{Capital(product.color)})</h1>
         <div className="flex mb-4">
           <span className="flex items-center">
             <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-pink-500" viewBox="0 0 24 24">

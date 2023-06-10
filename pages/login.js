@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-
+import Header from '../components/Header'
 
 
 const login = () => {
@@ -85,12 +85,7 @@ const login = () => {
     
   return (
     <>
-     {/* <style jsx global>{`
-
-.footer{
-display:none;
- }
-`}</style> */}
+    <Header title={'zwear - Login'} />
 <div className='topper '>
     <div className='box '>
       <span className='borderLine'></span>

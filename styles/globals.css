@@ -6,6 +6,7 @@ body{
     overflow-x: hidden;
     /* background-color: #eee; */
     background-color: white;
+    font-family: serif;
 }
 
 .videocss{
@@ -14,6 +15,11 @@ body{
   /* object-fit: cover; */
   background-position: center;
   background-size: cover;
+}
+@media only screen and (max-width: 600px) {
+  .videocss{
+    height: 75vh;
+  }
 }
 /* .main{
     height: 500px;

@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Header from '../components/Header'
 // import { AiOutlineShoppingCart } from "@react-icons/all-files/ai/AiOutlineShoppingCart";
 // import { AiFillCloseCircle } from "@react-icons/all-files/ai/AiFillCloseCircle";
 import { AiOutlinePlusCircle } from "@react-icons/all-files/ai/AiOutlinePlusCircle";
@@ -220,12 +221,12 @@ const addresssubmit = async  (e) =>{
   return (
     <>
     
-    
+    <Header title={'zwear - Checkout'} />
 
      <Center>
         <ColumnsWrapper>
           <Box>
-          <h2 className='font-bold text-center' >Cart</h2>
+          <h2 className='font-bold font-serif text-center' >Cart</h2>
            
             {cart && (
               <Table>
@@ -317,6 +318,8 @@ const addresssubmit = async  (e) =>{
               <Input type="number"
                      placeholder="Phone no"
                      value={phone}
+                     minlength="3"
+                     maxlength="11"
                      name="phone"
                      onChange={Change}
                      />

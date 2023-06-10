@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Header from '../components/Header'
 
 const Signup = () => {
   const router=useRouter()
@@ -95,14 +96,7 @@ const Signup = () => {
   }
   return (
     <>
-    <style jsx global>{`
-     navbar{
-      display:none;
-    }
-footer{
-display:none;
- }
-`}</style>
+    <Header title={'zwear - Signup'} />
 <div className='topper'>
     <div className='box'>
       <span className='borderLine'></span>

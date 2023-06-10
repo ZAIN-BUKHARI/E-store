@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Header from '../components/Header'
 
 const AllOrders = () => {
   const router=useRouter()
@@ -39,6 +40,7 @@ const AllOrders = () => {
 
   return (
     <div>
+      <Header title={'zwear - AllOrders'} />
         <div className='container mx-auto mb-56  '>
             <div className="flex flex-col">
   <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">

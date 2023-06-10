@@ -23,19 +23,19 @@ const Footer = ({footer}) => {
           <h2 className="title-font font-medium  text-gray-900 tracking-widest text-sm mb-3">Shop</h2>
           <nav className="list-none mb-10 font-serif">
             <li>
-              <Link href={'/tshirt'}  className="text-gray-600  hover:text-pink-500">3pcs</Link>
+              <Link href={'/product?category=3pcs'}  className="text-gray-600  hover:text-pink-500">3pcs</Link>
             </li>
             <li>
-              <Link href={'/hoodies'}  className="text-gray-600 hover:text-pink-500">2pcs</Link>
+              <Link href={'/product?category=2pcs'}  className="text-gray-600 hover:text-pink-500">2pcs</Link>
             </li>
             <li>
-              <Link href={'/mugs'}  className="text-gray-600 hover:text-pink-500">Bags</Link>
+              <Link href={'/product?category=bags'}  className="text-gray-600 hover:text-pink-500">Bags</Link>
             </li>
             <li>
-              <Link href={'/jackets'}  className="text-gray-600 hover:text-pink-500">Unstitch</Link>
+              <Link href={'/product?category=unstitch'}  className="text-gray-600 hover:text-pink-500">Unstitch</Link>
             </li>
             <li>
-              <Link href={'/jackets'}  className="text-gray-600 hover:text-pink-500">Plazo</Link>
+              <Link href={'/product?category=plazo'}  className="text-gray-600 hover:text-pink-500">Plazo</Link>
             </li>
           </nav>
         </div>
