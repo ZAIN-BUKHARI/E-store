@@ -1,9 +1,7 @@
 import Header from '../components/Header'
 import Section from '../components/Section'
-import styled from 'styled-components'
 import NewProducts from '../components/Arrival'
 import Wear from '../components/Wear'
-import Image from 'next/image'
 
 export default function Home() {
   return (
