@@ -1,6 +1,6 @@
 import ConnectMongoDB from '../../middleware/mongoose'
 import Product from '../../models/Product'
-import Tshirts from '../Tshirts';
+// import Tshirts from '../Tshirts';
 
 const handler= async (req, res)=> {
     let {page,limit}=req.query;

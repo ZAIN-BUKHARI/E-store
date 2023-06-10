@@ -1,4 +1,4 @@
-// import Header from '../components/Header'
+import Header from '../components/Header'
 import Section from '../components/Section'
 import NewProducts from '../components/Arrival'
 import Wear from '../components/Wear'
@@ -8,7 +8,7 @@ export default function Home() {
     <>
       
     <div className=''>
-      {/* <Header title={'zwear - Home'} /> */}
+      <Header title={'zwear - Home'} />
       <Section/>
       <NewProducts/>
       <section className="text-gray-600 body-font">
