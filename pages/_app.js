@@ -52,20 +52,20 @@ function MyApp({ Component, pageProps
     }
     
   }, [router.query])
-useEffect(()=>{
-  if(router.pathname=='/login'){
-    setfooter(false)
-  }
-  else if(router.pathname=='/signup'){
-    setfooter(false)
-  }
-  else if(router.pathname=='/forgot'){
-    setfooter(false)
-  }
-  else if(router.pathname=='/adminlogin'){
-    setfooter(false)
-  }
-},[])
+// useEffect(()=>{
+//   if(router.pathname=='/login'){
+//     setfooter(false)
+//   }
+//   else if(router.pathname=='/signup'){
+//     setfooter(false)
+//   }
+//   else if(router.pathname=='/forgot'){
+//     setfooter(false)
+//   }
+//   else if(router.pathname=='/adminlogin'){
+//     setfooter(false)
+//   }
+// },[])
   
   
   

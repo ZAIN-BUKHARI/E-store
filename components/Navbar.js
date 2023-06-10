@@ -71,7 +71,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
       </div>
       <div className="nav font-serif text-bg-black  ">
         <Media className=" space-x-6 md:space-x-10   font-bold flex    items-center  ">
-          
+{/*           
             <Link href={`/product?category=3pcs`}><li className="flex hover:text-gray-600  " 
             
             >
@@ -105,7 +105,7 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
         
             >
               Plazo
-            </li></Link>
+            </li></Link> */}
         
         </Media>
       </div>
