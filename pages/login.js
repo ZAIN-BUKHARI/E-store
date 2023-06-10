@@ -85,14 +85,14 @@ const login = () => {
     
   return (
     <>
-     <style jsx global>{`
+     {/* <style jsx global>{`
 
-Footer{
+.footer{
 display:none;
  }
-`}</style>
-<div className='topper'>
-    <div className='box'>
+`}</style> */}
+<div className='topper '>
+    <div className='box '>
       <span className='borderLine'></span>
       <form  >
         <h2>Sign in</h2>

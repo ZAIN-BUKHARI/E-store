@@ -2,9 +2,9 @@ import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 
-const Footer = () => {
+const Footer = ({footer}) => {
   return (
-    <div className='bg-white' >
+    <div className={`bg-white ${!footer?'hidden':''}`} >
       {/* <footer className="text-gray-600 md:ml-1 -ml-6 hover:text-pink-500 body-font footer Footer border-t-2 border-pink-500     "> */}
     <div className=" bg-white container md:px-6  px-0 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
       <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
@@ -13,32 +13,35 @@ const Footer = () => {
           <img src="/zwearlogo.png" width={120} height={50} alt='zainyswear' className="w-26 h-20 text-white p-2  rounded-full" >
           </img> 
         
-          <span className=" hover:text-pink-500 ml-1 text-xl text-red-500">z-wear</span>
+          <span className=" hover:text-pink-500 ml-1 text-xl text-red-500 font-serif">zwear</span>
         </Link>
-        <p className="mt-2 text-sm text-gray-500">If you are a true programmer then you need to wear the code alway ! Order now your code from z-wear</p>
+        <p className="mt-2 text-sm text-gray-500">If you are a true programmer then you need to wear the code alway ! Order now your code from zwear</p>
         <p className="mt-2 text-sm text-red-500">&lt;Why-not-wear-anything-special&gt;</p>
       </div>
       <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
         <div className="lg:w-1/4 md:w-1/2 md:mx-0 mx-36 w-fullmx-10 px-4">
           <h2 className="title-font font-medium  text-gray-900 tracking-widest text-sm mb-3">Shop</h2>
-          <nav className="list-none mb-10">
+          <nav className="list-none mb-10 font-serif">
             <li>
-              <Link href={'/tshirt'}  className="text-gray-600  hover:text-pink-500">tshirts</Link>
+              <Link href={'/tshirt'}  className="text-gray-600  hover:text-pink-500">3pcs</Link>
             </li>
             <li>
-              <Link href={'/hoodies'}  className="text-gray-600 hover:text-pink-500">hoodies</Link>
+              <Link href={'/hoodies'}  className="text-gray-600 hover:text-pink-500">2pcs</Link>
             </li>
             <li>
-              <Link href={'/mugs'}  className="text-gray-600 hover:text-pink-500">mugs</Link>
+              <Link href={'/mugs'}  className="text-gray-600 hover:text-pink-500">Bags</Link>
             </li>
             <li>
-              <Link href={'/jackets'}  className="text-gray-600 hover:text-pink-500">jackets</Link>
+              <Link href={'/jackets'}  className="text-gray-600 hover:text-pink-500">Unstitch</Link>
+            </li>
+            <li>
+              <Link href={'/jackets'}  className="text-gray-600 hover:text-pink-500">Plazo</Link>
             </li>
           </nav>
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full mx-10 px-4">
           <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Customer service</h2>
-          <nav className="list-none mb-10">
+          <nav className="list-none mb-10 font-serif">
             <li>
               <Link href={'/about'}  className="text-gray-600 hover:text-pink-500">About us</Link>
             </li>
@@ -53,7 +56,7 @@ const Footer = () => {
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full mx-10 px-4">
           <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">POLICY</h2>
-          <nav className="list-none mb-10">
+          <nav className="list-none mb-10 font-serif">
             <li>
               <Link href={'/'}  className="text-gray-600 hover:text-pink-500">Private policy</Link>
             </li>
@@ -67,7 +70,7 @@ const Footer = () => {
     </div>
     <div className="bg-gray-100 border-t-2 border-gray-300 ">
       <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-        <p className="text-gray-500 text-sm text-center sm:text-left">© 2022 z-wear.com — All Rights Reserved
+        <p className="text-gray-500 text-sm text-center sm:text-left font-serif">© 2022 zwear.store — All Rights Reserved
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
           <Link href={'/'}  className="text-gray-500">

@@ -30,20 +30,27 @@ const Menuitems = [
     href: "/admincustom",
   },
   {
-    title: "Payment",
+    title: "Marked",
+    icon: "grid",
+    href: "/adminmarked",
+  },
+  {
+    title: "Delivered",
     icon: "image",
     href: "/adminpayment",
   },
   {
-    title: "Mark order",
+    title: "Cancel",
     icon: "star",
-    href: "/adminmark",
+    href: "/admincancel",
   },
+  
   {
     title: "Update",
     icon: "grid",
     href: "/update",
   },
+  
 ];
 
 export default Menuitems;

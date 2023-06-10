@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps
  }) {
   const router = useRouter()
   const [progress, setProgress] = useState(0)
+  const [footer, setfooter] = useState(true)
   const [cart, setCart] = useState({})
   const [subTotal, setSubTotal] = useState(0)
   const [user, setUser] = useState({value:null})
@@ -51,7 +52,21 @@ function MyApp({ Component, pageProps
     }
     
   }, [router.query])
-
+useEffect(()=>{
+  if(router.pathname=='/login'){
+    setfooter(false)
+  }
+  else if(router.pathname=='/signup'){
+    setfooter(false)
+  }
+  else if(router.pathname=='/forgot'){
+    setfooter(false)
+  }
+  else if(router.pathname=='/adminlogin'){
+    setfooter(false)
+  }
+},[])
+  
   
   
   const saveCart = (myCart) =>{
@@ -139,7 +154,7 @@ function MyApp({ Component, pageProps
    <Navbar logout={logout} user={user} key={key} cart={cart} AddToCart={AddToCart} removeFromCart={removeFromCart} subTotal={subTotal} clearCart={clearCart}  />
    {/* {key &&  <Navbar logout={logout} user={user} key={key} cart={cart} AddToCart={AddToCart} removeFromCart={removeFromCart} subTotal={subTotal} clearCart={clearCart}  />} */}
   <Component admin={admin}  buyNow={buyNow} user={user} cart={cart} AddToCart={AddToCart}  removeFromCart={removeFromCart} subTotal={subTotal} clearCart={clearCart} {...pageProps} />
-  <Footer/>
+  <Footer footer={footer}/>
   </>
   )
 }

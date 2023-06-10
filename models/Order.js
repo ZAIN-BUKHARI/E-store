@@ -44,7 +44,7 @@ const OrderSchema = new Schema({
     },
     payment:{
         type:String,
-        default:''
+        default:'pending'
     },
 
 },{timestamps:true})

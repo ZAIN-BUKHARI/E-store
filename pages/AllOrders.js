@@ -61,6 +61,9 @@ const AllOrders = () => {
                 Amount
               </th>
               <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Status
+              </th>
+              <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                 Details
               </th>
               <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
@@ -80,6 +83,9 @@ const AllOrders = () => {
               </td>
               <td className="text-sm font-medium text-gray-900  px-6 py-4 whitespace-nowrap">
               {items.subTotal}
+              </td>
+              <td className="text-sm font-medium text-gray-900  px-6 py-4 whitespace-nowrap">
+              {items.status=='pending'?'Pending':'Delivered' }
               </td>
               <td className="text-sm font-medium text-gray-900 px-6 py-4 whitespace-nowrap">
                 <Link href={`/MyOrder?id=`+ items._id}>Details</Link>

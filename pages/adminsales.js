@@ -77,44 +77,63 @@ const Adminsales = (admin) => {
   },[])
 
  
-// total of all orders 
+// no of sold && delivered
  let total = 0;
   for (const productId of product) {
-    const price = productId.subTotal;
-    total += price;
+    console.log(productId)
+    if(productId.status=='delivered'){
+      const price = productId.subTotal;
+      total += price;
+    }
   }
-
-// length of marked orders 
+// no of sold && delivered
  let marked = 0;
   for (const productId of product) {
-    if(productId.status=='done')
-        marked++;
+    if(productId.status=='delivered'){
+      marked++;
+    }
   }
-  //price of marked orders
+
+  //markaz marked
   let markedproduct=0;
   for (const productId of product) {
-    if(productId.status=='done')
+    if(productId.status=='marked')
     markedproduct+=productId.subTotal
   }
-  //price of marked orders
-  let profit=0;
-  for (const productId of totprofit) {
-    if(productId.Profit && productId.payment=='done'){
-      profit+=productId.Profit
-    }
-  }
-  //length of payment orders
-  let lengthofallproduct = 0;
+  //markz marked product length
+  let markaz = 0;
   for (const productId of product) {
-    if(productId.payment=='done')
-      lengthofallproduct++;
-  }
-    //price of pay orders
-    let pay=0;
-    for (const productId of product) {
-      if(productId.payment=='done')
-      pay+=productId.subTotal
+    if(productId.status=='marked'){
+      markaz++;
     }
+  }
+  // profit calculation 
+  // let profit = 0;
+  // for (const productId of product) {
+  //   if(productId.status=='delivered'){
+  //     const price = productId.profit;
+  //     profit += price;
+  //   }
+  // }
+  // no of sold && delivered
+ let cancel = 0;
+ for (const productId of product) {
+   if(productId.status=='cancel'){
+    cancel++;
+   }
+ }
+ let pending = 0;
+ for (const productId of product) {
+   if(productId.status=='pending'){
+    pending++;
+   }
+ }
+
+
+
+
+
+  
 
   return (
     <>
@@ -144,53 +163,51 @@ const Adminsales = (admin) => {
                   </tr> */}
                 </thead>
                 <tbody>
-                 
-               
-                <tr>
-                <ProductInfoCell >
-                  <ProductImageBox><img src='https://images.unsplash.com/photo-1603880921125-88ce2fc04673?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JkZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60'/></ProductImageBox>
-                  Number of product Sold</ProductInfoCell>
-                <ProductInfoCell> 
-                    {/* <Button  >-</Button> */}
-                    <QuantityLabel>{product.length}
-                    </QuantityLabel>
-                    {/* <Button >+</Button> */}
-                </ProductInfoCell>
-                <ProductInfoCell>Rs{total}</ProductInfoCell>  
-                  </tr>
-                  
                 <tr>
                 <ProductInfoCell >
                   <ProductImageBox><img src='https://media.istockphoto.com/id/1317087986/photo/dollar-currency-growth-concept-with-upward-arrows-on-charts-and-coins-background.jpg?b=1&s=170667a&w=0&k=20&c=gvk20jhUQUlHxn84ilKGj2aPgyE9sr-8c7tNnvUvS-I='/></ProductImageBox>
-                  Profit </ProductInfoCell>
+                  Pending orders </ProductInfoCell>
                 <ProductInfoCell> 
-                    {/* <Button  >-</Button> */}
-                    <QuantityLabel>{lengthofallproduct}
+                    <QuantityLabel>{pending}
                     </QuantityLabel>
-                    {/* <Button >+</Button> */}
                 </ProductInfoCell>
-                <ProductInfoCell>Rs{profit}</ProductInfoCell>  
+                {/* <ProductInfoCell>Rs{profit}</ProductInfoCell>   */}
                   </tr>
                   <tr>
                 <ProductInfoCell >
                   <ProductImageBox><img src='https://media.istockphoto.com/id/1324465031/photo/high-angle-view-close-up-asian-woman-using-meal-delivery-service-ordering-food-online-with.jpg?b=1&s=170667a&w=0&k=20&c=PdIhDg9OT_qTFuSaavfhPDRyABCJL7X0MDBlyqasYQ0='/></ProductImageBox>
-                  Number of orders Marked</ProductInfoCell>
+                  Markaz Marked Orders </ProductInfoCell>
                 <ProductInfoCell> 
-                    <QuantityLabel>{marked}
+                    <QuantityLabel>{markaz}
                     </QuantityLabel>
                 </ProductInfoCell>
-                <ProductInfoCell>Rs{markedproduct}</ProductInfoCell>  
+                {/* <ProductInfoCell>Rs{markedproduct}</ProductInfoCell>   */}
                   </tr>
+                <tr>
+                <ProductInfoCell >
+                  <ProductImageBox><img src='https://images.unsplash.com/photo-1603880921125-88ce2fc04673?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JkZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60'/></ProductImageBox>
+                  Delivered products</ProductInfoCell>
+                <ProductInfoCell> 
+                    {/* <Button  >-</Button> */}
+                    <QuantityLabel>{marked}
+                    </QuantityLabel>
+                    {/* <Button >+</Button> */}
+                </ProductInfoCell>
+                {/* <ProductInfoCell>Rs{total}</ProductInfoCell>   */}
+                  </tr>
+                  
+               
+                 
                   
                 <tr>
                 <ProductInfoCell >
                   <ProductImageBox><img src='https://media.istockphoto.com/id/1450667766/photo/from-vision-through-strategy-and-execution-to-success.jpg?b=1&s=170667a&w=0&k=20&c=XMHCkr9U0Co8K9lZM__vFebGK2JOzNvjjPzuYLzpWxY='/></ProductImageBox>
-                  Orders Payment Marked </ProductInfoCell>
+                  Cancel orders </ProductInfoCell>
                 <ProductInfoCell> 
-                    <QuantityLabel>{lengthofallproduct}
+                    <QuantityLabel>{cancel}
                     </QuantityLabel>
                 </ProductInfoCell>
-                <ProductInfoCell>Rs{pay}</ProductInfoCell>  
+                {/* <ProductInfoCell>Rs{pay}</ProductInfoCell>   */}
                   </tr>
 
                    <tr>

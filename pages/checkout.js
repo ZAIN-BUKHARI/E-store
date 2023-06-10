@@ -160,7 +160,7 @@ const Change = async (e) =>{
     setAddress(a.success.address)
     setCity(a.success.city)
     setEmail(a.success.email)
-    if(a.success.phone.length>=10){
+    if(a.success.phone){
       setvaliate(true)
     }else{
       setvaliate(false)
@@ -259,7 +259,7 @@ const addresssubmit = async  (e) =>{
                           </Button>
                       </td>
                       <td>
-                      <div className={`border-2 border-gray-300 ml-1 bg-${cart[K].variant}-500 rounded-full w-6 h-6 focus:outline-none text-center  `}><span  >{cart[K].size}</span></div>
+                      <div ><span  >{cart[K].size}</span></div>
                       </td>
                       {/* <td>
                         {cart[K].size}

@@ -8,44 +8,30 @@ import mongoose from 'mongoose'
 import Order from '../models/Order'
 import Link from 'next/link';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 
-const Adminpayment = (admin) => {
+const adminpayment = (admin) => {
   const orders=admin.order
-  const [Marked,setMarked]=useState(false)
-  const [Pay,setPay]=useState(false)
-
+  const [Marked,setMarked]=useState('')
+  const router=useRouter()
   
-//STATUS
-  const status=async(_id)=>{
+
+  const handleChange=async(e)=>{
+
+    if(e.target.name=='Marked'){
+      setMarked(e.target.value)
+  }
+}
+  const submit=async(_id)=>{
     const data = {_id,Marked}
-    const dataone = {_id}
-    if(!Marked){
-      await axios.post('/api/Admin/status',dataone).then(res=>{
-        // if(res.data.orders.status=='done'){
-          setMarked(true)
-        // }
-      })
-    }else{
-      await axios.post('/api/Admin/status',data).then(res=>{
-          setMarked(false)
-          })
-    }
-  }
-  //PAY
-  const pay=async(_id)=>{
-    const data = {_id,Pay}
-    const dataone = {_id}
-    if(!Pay){
-      await axios.post('/api/Admin/pay',dataone).then(res=>{
-          setPay(true)
-      })
-    }else{
-      await axios.post('/api/Admin/pay',data).then(res=>{
-          setPay(false)
-          })
-    }
-  }
+    await axios.post('/api/Admin/status',data).then(res=>{
+        if(res){
+          router.push('/adminpayment')
+        }
+    })
+}
+
     return (
       <ThemeProvider theme={theme}>
            <style jsx global>{`
@@ -63,7 +49,7 @@ const Adminpayment = (admin) => {
   <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div className="overflow-hidden">
-            <h1 className='font-bold text-3xl p-8 text-pink-500 text-center' >Complet Order Payment History</h1>
+            <h1 className='font-bold text-3xl p-8 text-pink-500 text-center' >Delivered Orders History</h1>
         <table className="min-w-full">
           <thead className="border-b">
             <tr className='border-pink-300 border-b'  >
@@ -95,11 +81,14 @@ const Adminpayment = (admin) => {
                 Address
               </th>
               <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Mark
+                Status
               </th>
               <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Payment 
+                Submit
               </th>
+              {/* <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Payment 
+              </th> */}
             </tr>
           </thead>
           <tbody>
@@ -126,12 +115,19 @@ const Adminpayment = (admin) => {
               <td className="text-sm font-medium text-gray-900 px-6 py-4 whitespace-nowrap">
                   {orders[items].address}
               </td>
-              <td className="text-sm font-medium text-gray-900 px-6 py-4 whitespace-nowrap">
-                  <button onClick={()=>{status(orders[items]._id)}} className={`text-black bg-white border-2 p-2 rounded-full ${orders[items].status=='done'?'bg-green-500 ':'border-red-300'}`} >Mark</button>
+              <td>
+              <select value={Marked} onChange={(e)=>{handleChange(e,orders[items]._id)}} name='Marked'  className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10">
+              
+                   <option value={'delivered'}>Delivered</option>
+                  <option value={'pending'}>Pending</option>
+                   <option value={'marked'}>Marked</option>
+                   <option value={'cancel'}>Cancel</option>
+              </select>
               </td>
               <td className="text-sm font-medium text-gray-900 px-6 py-4 whitespace-nowrap">
-              <button onClick={()=>{pay(orders[items]._id)}} className={`text-black bg-white border-2 p-2 rounded-full ${orders[items].payment=='done'?'bg-green-500 ':'border-red-300'}`} >Mark</button>
+                  <button onClick={()=>{submit(orders[items]._id)}} className={`text-black bg-white border-2 p-2 rounded-full ${orders[items].status=='done'?'bg-green-500 ':'border-red-300'}`} >Update status</button>
               </td>
+             
             </tr  >
             })}
            
@@ -156,7 +152,7 @@ export async function getServerSideProps(context) {
   if(!mongoose.connections[0].readyState){
     await mongoose.connect(process.env.MONGO_URI)
   }
-  let order = await Order.find({payment:'done'})
+  let order = await Order.find({status:'delivered'})
   
     
     
@@ -170,5 +166,5 @@ export async function getServerSideProps(context) {
 }
 
 
-export default Adminpayment
+export default adminpayment
 

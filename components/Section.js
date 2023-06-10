@@ -6,12 +6,12 @@ const Section = () => {
   return (
     <div className='main body-font shadow-lg shadow-gray-600  '>
       {/* <div className='overlay   h-full' > </div> */}
-      <img className='videocss   ' src='front-2.jpg'
+      <img className='videocss   ' src='back.jpeg'
        //autoPlay muted loop
         />
       <div className='content'>
         <h1 className='text-5xl' >Welcome</h1>
-        <p className='text-sm' >To z-wear.store</p>
+        <p className='text-sm font-serif' >To zwear.store</p>
       </div>
      
     </div>

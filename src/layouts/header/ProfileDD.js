@@ -40,9 +40,9 @@ const ProfileDD = () => {
         onClick={handleClick4}
       >
         <Box display="flex" alignItems="center">
-          <Image
+          <img
             // src={userimg}
-            src='/l4.jpeg'
+            src='/zwearlogo.png'
             alt="Zainy'sWear"
             width="30"
             height="30"

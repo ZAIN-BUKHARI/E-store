@@ -103,20 +103,8 @@ const login = () => {
   return (
     <>
    
-    
-    {/* <div className='mb-24 border-b-2 border-pink-500 '><section className="h-full gradient-form bg-gray-200 md:h-[800px]"> */}
-     <style jsx gobally>
-     {`
-      navbar{
-        display:none;
-      }
-      Footer{
-        display:none;
-      }
-     
-     `}
-   </style>
-<div className='topper'>
+  
+<div className='topper '>
     <div className='box'>
       <span className='borderLine'></span>
       <form  >

@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html className='overflow-x-hidden'>
       <Head />
-      <link rel="icon" sizes="57x57" href="/favicons.ico"/>
+      <link rel="icon" sizes="57x57" href="/Favicon/favicon.ico"/>
       <body>
         <Main />
         <NextScript />

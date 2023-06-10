@@ -21,9 +21,6 @@ const MYOrder = (order) => {
   
   const Capital = (word) =>{
     return word[0].toUpperCase()+ word.slice(1)
-   
-   
-  
 }
 
   
@@ -44,7 +41,8 @@ const MYOrder = (order) => {
         {Object.keys(products).map((item)=>{
            return <> 
            <div   className="flex border-t border-gray-200 py-2">
-           <span className="text-gray-500">{products[item].name.slice(0,12)}({products[item].size}/{Capital(products[item].variant)})</span>
+          {products[item].variant && <span className="text-gray-500">{products[item].name.slice(0,12)}({products[item].size}/{Capital(products[item].variant)})</span>}
+          {!products[item].variant && <span className="text-gray-500">{products[item].name.slice(0,12)}({products[item].size})</span>}
            <span className="m-auto text-gray-900">{products[item].qty}</span>
            <span className="m-auto text-gray-900">Rs {products[item].price}</span>
          </div>
@@ -59,7 +57,7 @@ const MYOrder = (order) => {
          
         </div>
       </div>
-      <img src="backzwear.png" priority pr='true' alt="zainyswear order page" width={500} height={500} className="lg:w-1/2 w-full text-pink-400 lg:h-auto h-64 object-cover object-center rounded" />
+      <img src="x.jpg" priority pr='true' alt="zainyswear order page" width={500} height={500} className="lg:w-1/2 w-full text-pink-400 lg:h-auto h-64 object-cover object-center rounded" />
     </div>
   </div>
 </section>

@@ -138,8 +138,9 @@ const Navbar = ({logout, user ,clearCart, cart, AddToCart, removeFromCart, subTo
         pauseOnHover={false}
         theme="light"
       />
-        { user.value && <Link  href={"/"}> <img alt="z-wear" width={70} height={50} className='text-white rounded-full ' src="zwearlogo.png"/></Link>}
-        { !user.value && <Link href={"/"}> <img alt="z-wear" width={70} height={50} className='text-white rounded-full ' src="zwearlogo.png"/></Link>}
+        {/* <Link  href={"/"}> <img alt="zwear" width={70} height={50} className='text-white rounded-full ' src="/zwearlogo.png"/></Link> */}
+        { user.value && <Link  href={"/"}> <img alt="zwear" width={70} height={50} className='text-white rounded-full ' src="/zwearlogo.png"/></Link>}
+        { !user.value && <Link href={"/"}> <img alt="zwear" width={70} height={50} className='text-white rounded-full ' src="/zwearlogo.png"/></Link>}
         
         {/* <img src='zwearlogo.png' width={50} height={50} /> */}
       </div>
